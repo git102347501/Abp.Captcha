@@ -3,12 +3,13 @@ Man machine verification module based on ABP vNext,Slide bar verification and ji
 
 # Using frames
 AbpvNext：4.0
+
 Type：Module
 
-#DEMO
+# DEMO
 TODO
 
-#Module configuration description
+# Module configuration description
 TODO
 
 
