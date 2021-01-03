@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
 using System.Drawing.Imaging;
+using Volo.Abp.DependencyInjection;
 
 namespace Abp.Captcha.VerifyPicture
 {
     /// <summary>
     /// 图片生成提供实现
     /// </summary>
-    public class VerifyPictureProvider : IVerifyPictureProvider
+    public class VerifyPictureProvider : IVerifyPictureProvider, ITransientDependency
     {
         /// <summary>
         /// 随机颜色库

@@ -10,11 +10,11 @@ namespace Abp.Captcha.VerifyPicture
     /// <summary>
     /// 验证图片应用服务实现
     /// </summary>
-    public class VerifyPictureService : CaptchaAppService, IVerifyPictureService
+    public class VerifyPictureAppService : CaptchaAppService, IVerifyPictureAppService
     {
         private readonly IVerifyPictureManager _verifyPictureManager;
 
-        public VerifyPictureService(IVerifyPictureManager verifyPictureManager)
+        public VerifyPictureAppService(IVerifyPictureManager verifyPictureManager)
         {
             _verifyPictureManager = verifyPictureManager;
         }

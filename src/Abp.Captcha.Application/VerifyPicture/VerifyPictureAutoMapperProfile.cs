@@ -10,11 +10,9 @@ namespace Abp.Captcha.VerifyPicture
     {
         public VerifyPictureAutoMapperProfile()
         {
-            CreateMap<DownloadModel, VerifyPictureOutput>().ConstructUsing(cp => new VerifyPictureOutput
-            {
-                Index = cp.Index,
-                Content = cp.Content
-            });
+            CreateMap<DownloadModel, VerifyPictureOutput>()
+                .ForMember(cp => cp.Index, opt => opt.MapFrom(src => src.Index))
+                .ForMember(cp => cp.Content, opt => opt.MapFrom(src => Convert.ToBase64String(src.Content)));
         }
     }
 }

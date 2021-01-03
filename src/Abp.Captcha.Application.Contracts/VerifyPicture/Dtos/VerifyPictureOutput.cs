@@ -18,6 +18,6 @@ namespace Abp.Captcha.VerifyPicture.Dtos
         /// <summary>
         /// 图片内容
         /// </summary>
-        public byte[] Content { get; set; }
+        public string Content { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Abp.Captcha.VerifyPicture
     /// <summary>
     /// 验证图片应用服务接口
     /// </summary>
-    public interface IVerifyPictureService : IApplicationService
+    public interface IVerifyPictureAppService : IApplicationService
     {
         /// <summary>
         /// 获取验证图片
