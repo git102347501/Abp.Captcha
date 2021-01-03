@@ -1,0 +1,22 @@
+﻿using Abp.Captcha.VerifyPicture.Dtos;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Services;
+
+namespace Abp.Captcha.VerifyPicture
+{
+    /// <summary>
+    /// 验证图片应用服务接口
+    /// </summary>
+    public interface IVerifyPictureService : IApplicationService
+    {
+        /// <summary>
+        /// 获取验证图片
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<VerifyPictureOutput> GetAsync(VerifyPictureInput input);
+    }
+}
