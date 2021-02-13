@@ -18,5 +18,11 @@ namespace Abp.Captcha.VerifyPicture
         /// 验证码
         /// </summary>
         public string Code { get; set; }
+
+        public ValidationModel(string index, string code)
+        {
+            Index = index;
+            Code = code;
+        }
     }
 }

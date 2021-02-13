@@ -18,5 +18,12 @@ namespace Abp.Captcha.VerifyPicture
         /// <param name="input"></param>
         /// <returns></returns>
         Task<VerifyPictureOutput> GetAsync(VerifyPictureInput input);
+
+        /// <summary>
+        /// 验证图片验证码有效性
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<bool> ValidationAsync(ValidationModel input);
     }
 }

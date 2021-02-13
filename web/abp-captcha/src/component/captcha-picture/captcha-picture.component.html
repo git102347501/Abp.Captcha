@@ -1,0 +1,12 @@
+<div class="captcha-picture">
+  <div class="picture-item item-img">
+    <img class="img-content" [src]="config.content" *ngIf="config.content != ''" alt="验证码图片">
+    <span class="img-content" *ngIf="config.content == ''">正在加载...</span>
+  </div>
+  <div class="picture-item">
+    <input type="text">
+  </div>
+  <div class="picture-item">
+    <button class="btn">Confirm</button>
+  </div>
+</div>

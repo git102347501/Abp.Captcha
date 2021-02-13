@@ -29,5 +29,15 @@ namespace Abp.Captcha.VerifyPicture
             var data = await _verifyPictureManager.CreateAsync(input.Length);
             return ObjectMapper.Map<DownloadModel, VerifyPictureOutput>(data);
         }
+
+        /// <summary>
+        /// 获取验证图片
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async Task<bool> ValidationAsync(ValidationModel input)
+        {
+            return await _verifyPictureManager.Validation(input);
+        }
     }
 }

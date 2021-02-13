@@ -1,0 +1,52 @@
+#capttcha-jigsaw {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    #jigsaw-imager {
+        width: 100%;
+        height: calc(100% - 40px);
+        margin: 0 20px;
+        position: relative;
+        #imager-check {
+            width: calc(100% - 40px);
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #imager-operation {
+            position: absolute;
+            top:0;
+            left:0;
+            width: 45px;
+            height: 100%;
+            background-color: rgb(69, 127, 236);
+            z-index: 9999;
+        }
+    }
+
+    #jigsaw-operation {
+        height: 40px;
+        margin: 5px 20px;
+        background-color: #f7f9fa;
+        border:  1px solid #e4e7eb;
+
+        #operation-btn {
+            height: 40px;
+            width: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 3px rgb(0 0 0 / 30%);
+            border: 1px solid #cccccc;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #operation-btn:hover {
+            background-color: rgb(83, 133, 241);
+            cursor: pointer;
+        }
+    }
+}
