@@ -13,38 +13,24 @@ namespace Abp.Captcha.VerifyPicture
 
         public string Code { get; set; }
 
-        public DateTime? TermValidityDate { get; set; }
+        public double? TermValidityMinutes { get; set; }
 
-        public VerifyPictureData(string index, string code, DateTime? termValidityDate = null)
+        public VerifyPictureData(string index, string code, double? termValidityMinutes = null)
         {
             this.Index = index;
             this.Code = code;
-            this.TermValidityDate = termValidityDate;
-        }
-
-        /// <summary>
-        /// 是否未过期
-        /// </summary>
-        /// <returns></returns>
-        private bool IsUnexpired()
-        {
-            return this.TermValidityDate == null ? true : this.TermValidityDate <= DateTime.Now;
+            this.TermValidityMinutes = termValidityMinutes;
         }
 
         /// <summary>
         /// 是否有效
         /// </summary>
         /// <param name="code">验证码</param>
+        /// <param name="ignored">是否忽略大小写</param>
         /// <returns></returns>
-        public bool IsValid(string code)
+        public bool IsValid(string code, bool ignored = true)
         {
-            if (this.IsUnexpired())
-            {
-                return this.Code == code;
-            }
-            else {
-                return false;
-            }
+            return ignored ? this.Code.ToUpper() == code.ToUpper() : this.Code == code;
         }
     }
 }

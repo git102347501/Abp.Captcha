@@ -1,12 +1,13 @@
 <div class="captcha-picture">
   <div class="picture-item item-img">
-    <img class="img-content" [src]="config.content" *ngIf="config.content != ''" alt="验证码图片">
+    <img (click)="getPicture()" class="img-content" [src]="config.content" *ngIf="config.content != ''" alt="验证码图片">
     <span class="img-content" *ngIf="config.content == ''">正在加载...</span>
   </div>
   <div class="picture-item">
-    <input type="text">
+    <input id="codevalue" placeholder="请输入图片验证码" [(ngModel)]="codeValue" type="text">
   </div>
   <div class="picture-item">
-    <button class="btn">Confirm</button>
+    <button (click)="verifyInput()" class="btn">Confirm</button>
+    <a>  index:{{config.index}}</a>
   </div>
 </div>

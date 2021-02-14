@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Abp.Captcha.VerifyPicture;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp;
@@ -7,27 +8,14 @@ namespace Abp.Captcha.Samples
 {
     [RemoteService]
     [Route("api/Captcha/sample")]
-    public class SampleController : CaptchaController, ISampleAppService
+    public class SampleController : CaptchaController
     {
-        private readonly ISampleAppService _sampleAppService;
-
-        public SampleController(ISampleAppService sampleAppService)
-        {
-            _sampleAppService = sampleAppService;
-        }
-
         [HttpGet]
-        public async Task<SampleDto> GetAsync()
+        [Route("test")]
+        [Captcha]
+        public bool GetTest()
         {
-            return await _sampleAppService.GetAsync();
-        }
-
-        [HttpGet]
-        [Route("authorized")]
-        [Authorize]
-        public async Task<SampleDto> GetAuthorizedAsync()
-        {
-            return await _sampleAppService.GetAsync();
+            return true;
         }
     }
 }

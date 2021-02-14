@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CaptchaJigsawComponent } from 'src/component/captcha-jigsaw/captcha-jigsaw.component';
 import { CaptchaPictureComponent } from 'src/component/captcha-picture/captcha-picture.component';
 import { CaptchaSliderComponent } from 'src/component/captcha-slider/captcha-slider.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CaptchaSliderComponent } from 'src/component/captcha-slider/captcha-sli
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

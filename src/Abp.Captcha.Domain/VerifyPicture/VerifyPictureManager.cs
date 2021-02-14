@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Caching.Distributed;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,18 +25,18 @@ namespace Abp.Captcha.VerifyPicture
         /// <summary>
         /// 创建图形验证码
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="length"></param>
         /// <returns></returns>
-        public async Task<DownloadModel> CreateAsync(int data)
+        public async Task<DownloadModel> CreateAsync(int length)
         {
-            var index = Guid.NewGuid().ToString();
-            // 创建验证码
-            var code = _verifyPictureProvider.CreateCode(data);
-            // 生成验证码图片
-            var content = await _verifyPictureProvider.GenerateAsync(code);
+            var data = new VerifyPictureData(Guid.NewGuid().ToString(), _verifyPictureProvider.CreateCode(length), 3);
+
+            var content = await _verifyPictureProvider.GenerateAsync(data.Code);
             // 写入缓存
-            _cache.Set(index, new VerifyPictureData(index, code));
-            return new DownloadModel(index, content);
+            await _cache.SetAsync(data.Index, data, 
+                new DistributedCacheEntryOptions { AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes((double)data.TermValidityMinutes) });
+
+            return new DownloadModel(data.Index, content);
         }
 
         /// <summary>
@@ -46,7 +47,7 @@ namespace Abp.Captcha.VerifyPicture
         public async Task<bool> Validation(ValidationModel data)
         {
             var result = await _cache.GetAsync(data.Index);
-            return result.IsValid(data.Code);
+            return result != null ? result.IsValid(data.Code) : false;
         }
     }
 }
