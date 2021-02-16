@@ -21,8 +21,18 @@
             left:0;
             width: 45px;
             height: 100%;
-            background-color: rgb(69, 127, 236);
             z-index: 9999;
+
+            #operation-img {
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                top: 27%;
+                left:0;
+                -moz-box-shadow:4px 4px 5px #ccc; 
+                -webkit-box-shadow:2px 2px 5px #ccc; 
+                box-shadow:2px 2px 5px rgb(145, 142, 142);
+            }
         }
     }
 

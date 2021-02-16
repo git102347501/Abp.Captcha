@@ -1,5 +1,11 @@
-<div id="captcha-slider">
-  <div id="slider-btn">
+<div #slidercontain id="captcha-slider">
+  <div #silderindicator id="slider-indicator" [ngStyle]="{'width.px': width}">
+    <div class="indicator-success" *ngIf="checkSuccess == 1"> 
+       <svg *ngIf="checkSuccess == 1" t="1613468304279" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2216" width="32" height="32"><path d="M897.5 159.1l-384.4-92-382.7 92-2 415.7v0.4c0 211.8 383.5 383.5 383.5 383.5S895.4 787 895.4 575.2v-0.4l2.1-415.7zM785.1 464h-0.5V575.6c-0.1 28.1-19.4 58.8-35.5 79.6-24.9 32.1-61.2 65.6-107.7 99.6C594 789.4 545.7 817.1 512 835c-33-17.5-79.8-44.4-126.7-78.3-47.3-34.2-84.1-68-109.6-100.5-16.5-21.1-36.2-52.1-36.3-80.6v-0.8l1.6-328.1 272.3-65.4 273 65.3-1.2 217.4z" p-id="2217" fill="#009966"></path><path d="M381.3 437.7l-70.7 70.7 162.2 162.2 258.9-258.9L661 341 472.8 529.2z" p-id="2218" fill="#009966"></path></svg>
+       <span style="margin-left: 4px;">验证成功</span>
+    </div>
+  </div>
+  <div #sliderbtn id="slider-btn" [ngStyle]="{'left.px': left}"  *ngIf="checkSuccess < 1">
     <svg t="1613189988319" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1127" width="24" height="24">
       <path d="M462.08 192a47.36 47.36 0 0 0 0 64l256 256-256 256a47.36 47.36 0 1 0 64 64l288.64-288.64A50.56 50.56 0 0 0 832 512a47.36 47.36 0 0 0-14.08-33.28L529.28 192a47.36 47.36 0 0 0-67.2 0z" p-id="1128" fill="#707070"></path><path d="M206.08 192a47.36 47.36 0 0 0 0 64l256 256-256 256a47.36 47.36 0 1 0 64 64l291.84-286.08A50.56 50.56 0 0 0 576 512a47.36 47.36 0 0 0-14.08-33.28L273.28 192a47.36 47.36 0 0 0-67.2 0z" p-id="1129" fill="#707070">
       </path>

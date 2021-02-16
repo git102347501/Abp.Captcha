@@ -4,10 +4,36 @@
     background-color: #f7f9fa;
     border:  1px solid #e4e7eb;
     border-radius:  2px;
+    position: relative;
+
+    #slider-indicator {
+        width: 0px;
+        height: 40px;
+        border: 1px solid #3ee01d;
+        //border-right: 0px;
+        background-color: rgb(185, 245, 185);
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .indicator-success {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            line-height: 100%;
+            color: green;
+        }
+    }
 
     #slider-btn {
         height: 40px;
         width: 40px;
+        position: absolute;
+        top: 0;
+        left: 0;
         background-color: #fff;
         box-shadow: 0 0 3px rgb(0 0 0 / 30%);
         border: 1px solid #cccccc;
@@ -18,7 +44,7 @@
     }
     
     #slider-btn:hover {
-        background-color: rgb(83, 133, 241);
+        background-color: rgb(132, 235, 132);
         cursor: pointer;
     }
 }
