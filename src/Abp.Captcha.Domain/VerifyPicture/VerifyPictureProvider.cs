@@ -17,15 +17,17 @@ namespace Abp.Captcha.VerifyPicture
         /// <summary>
         /// 随机颜色库
         /// </summary>
-        private readonly Brush[] _colorList = { Brushes.Black, Brushes.Red, Brushes.Blue, Brushes.Green, Brushes.Orange, Brushes.Brown, Brushes.Brown, Brushes.DarkBlue };
+        private readonly Brush[] _colorList = { Brushes.Black, Brushes.Red, Brushes.Blue, Brushes.Green, Brushes.Orange, Brushes.Brown, Brushes.White, Brushes.DarkBlue };
+
         /// <summary>
         /// 随机字体大小库
         /// </summary>
-        private readonly int[] _fontSizeList = { 15, 16, 17, 18 };
+        private readonly int[] _fontSizeList = { 10, 11, 12, 13, 14, 15, 16, 17, 18 };
+
         /// <summary>
         /// 随机字体库
         /// </summary>
-        private readonly string[] _typeFace = "DejaVu Sans".Split(",");
+        private readonly string[] _typeFace = "DejaVu Sans,Bradley Hand ITC".Split(",");
 
         /// <summary>
         /// 创建验证图片
@@ -39,16 +41,19 @@ namespace Abp.Captcha.VerifyPicture
                 Random rnd = new Random();// 随机数对象
                 Image image = new Bitmap(120, 40);// 创建图像区域
                 Graphics graph = Graphics.FromImage(image);
-                graph.Clear(Color.Azure);
+                graph.Clear(Color.Gainsboro);
+
+                var interferenceCount = rnd.Next(10,20);
                 // 画噪线 
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < interferenceCount; i++)
                 {
-                    Brush pencolor = _colorList[rnd.Next(_colorList.Length)];// 生成随机颜色
+                    Brush pencolor = _colorList[rnd.Next(_colorList.Length)]; // 生成随机颜色
                     Pen pen = new Pen(pencolor);
                     int x1 = rnd.Next(120);
                     int y1 = rnd.Next(40);
                     int x2 = rnd.Next(120);
                     int y2 = rnd.Next(40);
+
                     graph.DrawLines(pen, new Point[] { new Point(x1, y1), new Point(x2, y2) });
                 }
 

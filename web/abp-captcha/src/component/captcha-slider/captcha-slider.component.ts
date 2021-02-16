@@ -1,6 +1,4 @@
-import { NgStyle } from '@angular/common';
-import { Component, Directive, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { timeStamp } from 'console';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-captcha-slider',
