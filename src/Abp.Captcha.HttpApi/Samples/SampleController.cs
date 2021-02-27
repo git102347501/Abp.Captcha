@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Abp.Captcha.Slider;
 using Abp.Captcha.VerifyPicture;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +15,14 @@ namespace Abp.Captcha.Samples
         [Route("test")]
         [Captcha]
         public bool GetTest()
+        {
+            return true;
+        }
+
+        [HttpGet]
+        [Route("slidertest")]
+        [Slider]
+        public bool GetTest1()
         {
             return true;
         }

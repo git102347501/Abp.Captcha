@@ -1,4 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { of } from 'rxjs';
+import { catchError, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-captcha-slider',
@@ -12,17 +15,20 @@ export class CaptchaSliderComponent implements OnInit {
   sliderbtn!: ElementRef;
   @ViewChild('slidercontain') 
   slidercontain!: ElementRef;
+  private url = 'http://localhost:44371/';
   public diffX: any;
   public diffY: any;
   public left: any;
   public width: any;
   private slider = false;
   private checkData = [0];
+  public loading = false;
   // 是否验证成功 -1:未开启验证 0:验证中 1:验证成功 2:验证失败
   public checkSuccess = -1;
+  public silderclass = 'slider-indicator'
   //public top: any;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -31,8 +37,9 @@ export class CaptchaSliderComponent implements OnInit {
   onMousedown(event: MouseEvent) {
     console.log('mousedown');
     this.slider = true;
-    this.diffX = event.clientX - this.sliderbtn.nativeElement.offsetLeft;
-    this.diffY = event.clientY - this.sliderbtn.nativeElement.offsetTop;
+    this.checkSuccess = 0;
+    this.diffX = event.clientX - this.sliderbtn.nativeElement?.offsetLeft;
+    this.diffY = event.clientY - this.sliderbtn.nativeElement?.offsetTop;
   }
 
   /**
@@ -42,7 +49,7 @@ export class CaptchaSliderComponent implements OnInit {
   @HostListener('mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
     console.log('onMousemove');
-    if (!this.slider) {
+    if (!this.slider || this.loading == true) {
       return;
     }
     var event = event || window.event;
@@ -53,16 +60,18 @@ export class CaptchaSliderComponent implements OnInit {
     // 'Width:' + this.sliderbtn.nativeElement.style.width + 
     // '差值：' + (this.slidercontain.nativeElement.offsetWidth - moveX));
 
-    // // 如果挪出滑条区域，停止滑动
-    // if (moveY <= -15 || moveY >= 15) {
-    //   this.closeSlider();
-    //   return;
-    // }
+    // 如果挪出滑条区域，停止滑动
+    if (moveY <= -15 || moveY >= 15) {
+      this.closeSlider();
+      return;
+    }
 
     // 如果推拽到底
     if((this.slidercontain.nativeElement.offsetWidth - moveX) < 40){
       this.width = this.slidercontain.nativeElement.offsetWidth;
-      this.successSlider();
+      if (this.loading == false) {
+        this.verifyData();
+      }
       return;
     }
 
@@ -88,7 +97,9 @@ export class CaptchaSliderComponent implements OnInit {
     var moveX = event.clientX - this.diffX;
 
     moveX = 0;
-    this.closeSlider();
+    if(this.loading === false){
+      this.closeSlider();
+    }
     console.log('mouseup:left:' + this.left);
   }
 
@@ -96,11 +107,32 @@ export class CaptchaSliderComponent implements OnInit {
    * 滑条关闭
    */
   private closeSlider(){
+    console.log('closeSlider');
     this.left = 0;
-    if (this.checkSuccess != 1) {
-      this.width = 0;
-    }
+    this.width = 0;
+    this.checkSuccess = -1;
+    this.silderclass = 'slider-indicator';
     this.slider = false;
+    this.checkData = [];
+    this.loading = false;
+  }
+
+  private verifyData(){
+    this.loading = true;
+    var headers = new HttpHeaders({ Data : this.checkData.join(',') });
+    this.http.get(this.url + 'api/Captcha/sample/slidertest', { headers: headers })
+    .pipe(mergeMap(result => of(result)), catchError(e => { 
+      console.log('e.status:' + e.status);
+      if (e.status !== 200) {
+        this.errorSlider();
+        return of(undefined);
+      }
+      return of(e);
+    })).subscribe((res: any) => {
+      if (res) {
+        this.successSlider();
+      }
+  });
   }
 
   /**
@@ -109,6 +141,14 @@ export class CaptchaSliderComponent implements OnInit {
   private successSlider(){
     this.checkSuccess = 1;
     console.log('mouseup:left:' + this.checkData);
+    setTimeout(() => {
+      this.closeSlider();
+    }, 1000);
+  }
+
+  private errorSlider(){
+    this.checkSuccess = 2;
+    this.silderclass = 'slider-indicator slider-error';
     setTimeout(() => {
       this.closeSlider();
     }, 1000);

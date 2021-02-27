@@ -5,8 +5,23 @@
     border:  1px solid #e4e7eb;
     border-radius:  2px;
     position: relative;
-
-    #slider-indicator {
+    a {
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        -webkit-user-select: none;
+        -moz-user-focus: none;
+        -moz-user-select: none;
+    }
+    .slider-error {
+        border: 1px solid #c40303 !important;
+        background-color: rgb(248, 230, 227) !important;
+    }
+    .indicator {
+        transition: width 2s;
+        -moz-transition: width 2s; /* Firefox 4 */
+        -webkit-transition: width 2s; /* Safari 和 Chrome */
+        -o-transition: width 2s; /* Opera */
+    }
+    .slider-indicator {
         width: 0px;
         height: 40px;
         border: 1px solid #3ee01d;
@@ -26,6 +41,15 @@
             line-height: 100%;
             color: green;
         }
+
+        .indicator-error {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            line-height: 100%;
+            color: red;
+        }
     }
 
     #slider-btn {
@@ -44,7 +68,7 @@
     }
     
     #slider-btn:hover {
-        background-color: rgb(132, 235, 132);
+        background-color: rgb(216, 218, 216);
         cursor: pointer;
     }
 }
