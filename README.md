@@ -8,7 +8,7 @@ Type：Module
 
 # DEMO
 使用界面：
-![image](https://user-images.githubusercontent.com/37917403/112716412-48065780-8f21-11eb-9019-1d54e5170c82.png)
+![微信截图_20210327172411](https://user-images.githubusercontent.com/37917403/112716447-826ff480-8f21-11eb-88cd-4eed670fdc34.png)
 API调试界面：
 ![image](https://user-images.githubusercontent.com/37917403/112716425-63716280-8f21-11eb-9652-e8935da84362.png)
 
