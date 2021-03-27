@@ -7,7 +7,8 @@ namespace Abp.Captcha
     [DependsOn(
         typeof(AbpDddDomainModule),
         typeof(AbpCachingModule),
-        typeof(CaptchaDomainSharedModule)
+        typeof(CaptchaDomainSharedModule),
+        typeof(AbpCachingModule)
     )]
     public class CaptchaDomainModule : AbpModule
     {

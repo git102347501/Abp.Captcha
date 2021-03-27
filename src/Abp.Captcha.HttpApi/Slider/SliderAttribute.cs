@@ -1,4 +1,5 @@
-﻿using Abp.Captcha.Slider.Dtos;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,9 @@ namespace Abp.Captcha.Slider
             }
 
             var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
-            if (!await _verifyPictureAppService.VerificationAsync(new ValidationModel(Array.ConvertAll(data.Value.ToString().Split(','), int.Parse))))
+            var valdata = new ValidationModel(Array.ConvertAll(data.Value.ToString().Split(','), int.Parse));
+            valdata.ActionData = new SliderActionModel(context.HttpContext.Connection.RemoteIpAddress.ToString());
+            if (!await _verifyPictureAppService.VerificationAsync(valdata))
             {
                 throw new UserFriendlyException("The verification code is wrong!");
             }

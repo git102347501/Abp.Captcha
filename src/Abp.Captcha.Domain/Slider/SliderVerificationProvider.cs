@@ -36,7 +36,7 @@ namespace Abp.Captcha.Slider
         public async Task<bool> VerificationAsync(ValidationModel data)
         {
             // 判断数字滑动速率是否超出正常值
-            if (await VerificationAverage(data.Data))
+            if (!await VerificationAverage(data.Data))
             {
                 return false;
             }

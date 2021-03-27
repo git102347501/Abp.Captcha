@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
-import { of } from 'rxjs';
-import { catchError, mergeMap } from 'rxjs/operators';
+import { of, Subject } from 'rxjs';
+import { catchError, debounceTime, distinctUntilChanged, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-captcha-slider',
@@ -22,6 +22,7 @@ export class CaptchaSliderComponent implements OnInit {
   public width: any;
   private slider = false;
   private checkData = [0];
+  private dragDrop = new Subject<number>();
   public loading = false;
   // 是否验证成功 -1:未开启验证 0:验证中 1:验证成功 2:验证失败
   public checkSuccess = -1;
@@ -31,6 +32,10 @@ export class CaptchaSliderComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.dragDrop.pipe(debounceTime(1), distinctUntilChanged()).subscribe(data => {
+			this.checkData.push(data); 
+      console.log('checkData+:' + data);
+		});
   }
   
   @HostListener('mousedown', ['$event'])
@@ -40,6 +45,10 @@ export class CaptchaSliderComponent implements OnInit {
     this.checkSuccess = 0;
     this.diffX = event.clientX - this.sliderbtn.nativeElement?.offsetLeft;
     this.diffY = event.clientY - this.sliderbtn.nativeElement?.offsetTop;
+  }
+
+  dropChange(data : number) {
+    this.dragDrop.next(data);
   }
 
   /**
@@ -84,7 +93,7 @@ export class CaptchaSliderComponent implements OnInit {
 
     this.left = moveX;
     this.width = moveX;
-    this.checkData.push(moveX);
+    this.dropChange(moveX);
   }
 
   /**
@@ -119,7 +128,19 @@ export class CaptchaSliderComponent implements OnInit {
 
   private verifyData(){
     this.loading = true;
-    var headers = new HttpHeaders({ Data : this.checkData.join(',') });
+    console.dir(this.checkData);
+    var data = this.checkData.join(',');
+    console.dir(data);
+    // if (data.length > 20) {
+    //   var newData = new Array<string>();
+    //   var count = data.length / 10;
+    //   for (let index = 0; index < 10; index + count) {
+    //     const element = data[index];
+    //     newData.push(element);
+    //   }
+    //   data = newData.join(',');
+    // }
+    var headers = new HttpHeaders({ Data : data });
     this.http.get(this.url + 'api/Captcha/sample/slidertest', { headers: headers })
     .pipe(mergeMap(result => of(result)), catchError(e => { 
       console.log('e.status:' + e.status);
