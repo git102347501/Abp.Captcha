@@ -7,7 +7,11 @@ AbpvNext：4.0
 Type：Module
 
 # DEMO
-TODO
+使用界面：
+![image](https://user-images.githubusercontent.com/37917403/112716412-48065780-8f21-11eb-9019-1d54e5170c82.png)
+API调试界面：
+![image](https://user-images.githubusercontent.com/37917403/112716425-63716280-8f21-11eb-9652-e8935da84362.png)
+
 
 # Module configuration description
 TODO
