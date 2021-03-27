@@ -8,17 +8,11 @@ namespace Abp.Captcha.Slider
     {
         public string Ip { get; set; }
 
-        public string Address { get; set; }
-
-        public string Browser { get; set; }
-
         public int Count { get; set; }
 
-        public SliderActionCacheModel(string ip, string address = "", string brower = "", int count = 0)
+        public SliderActionCacheModel(string ip, int count = 1)
         {
             this.Ip = ip;
-            this.Address = address;
-            this.Browser = brower;
             this.Count = count;
         }
 

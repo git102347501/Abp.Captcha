@@ -20,6 +20,7 @@ export class CaptchaSliderComponent implements OnInit {
   public diffY: any;
   public left: any;
   public width: any;
+  public errormsg = '验证失败，请重试';
   private slider = false;
   private checkData = [0];
   private dragDrop = new Subject<number>();
@@ -128,6 +129,7 @@ export class CaptchaSliderComponent implements OnInit {
 
   private verifyData(){
     this.loading = true;
+    this.left = 324;
     console.dir(this.checkData);
     var data = this.checkData.join(',');
     console.dir(data);
@@ -143,9 +145,9 @@ export class CaptchaSliderComponent implements OnInit {
     var headers = new HttpHeaders({ Data : data });
     this.http.get(this.url + 'api/Captcha/sample/slidertest', { headers: headers })
     .pipe(mergeMap(result => of(result)), catchError(e => { 
-      console.log('e.status:' + e.status);
+      console.dir(e.error.message);
       if (e.status !== 200) {
-        this.errorSlider();
+        this.errorSlider(e.error.message ? e.error.message : '验证失败，请重试');
         return of(undefined);
       }
       return of(e);
@@ -167,9 +169,10 @@ export class CaptchaSliderComponent implements OnInit {
     }, 1000);
   }
 
-  private errorSlider(){
+  private errorSlider(msg: string){
     this.checkSuccess = 2;
     this.silderclass = 'slider-indicator slider-error';
+    this.errormsg = msg;
     setTimeout(() => {
       this.closeSlider();
     }, 1000);

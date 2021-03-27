@@ -58,8 +58,9 @@ namespace Abp.Captcha.Slider
                     });
             } 
             else
-            {
+            { 
                 cacheItem.AddCount();
+                await _cache.SetAsync(sliderAction.Ip, cacheItem);
             }
         }
     }
