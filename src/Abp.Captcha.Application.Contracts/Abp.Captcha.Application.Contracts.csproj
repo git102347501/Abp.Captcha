@@ -13,4 +13,8 @@
     <ProjectReference Include="..\Abp.Captcha.Domain.Shared\Abp.Captcha.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Slider\Dtos\" />
+  </ItemGroup>
+
 </Project>

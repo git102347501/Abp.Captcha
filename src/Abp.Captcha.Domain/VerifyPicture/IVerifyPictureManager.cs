@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.Domain.Services;
 
 namespace Abp.Captcha.VerifyPicture
 {
     /// <summary>
     /// 图形验证码领域服务
     /// </summary>
-    public interface IVerifyPictureManager
+    public interface IVerifyPictureManager : IDomainService
     {
         /// <summary>
         /// 创建图形验证码
@@ -21,6 +22,6 @@ namespace Abp.Captcha.VerifyPicture
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        Task<bool> Validation(ValidationModel data);
+        Task<bool> ValidationAsync(ValidationModel data);
     }
 }

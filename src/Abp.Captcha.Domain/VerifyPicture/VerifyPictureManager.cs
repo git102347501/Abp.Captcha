@@ -11,7 +11,7 @@ namespace Abp.Captcha.VerifyPicture
     /// <summary>
     /// 图形验证码领域服务实现
     /// </summary>
-    public class VerifyPictureManager: IDomainService, IVerifyPictureManager
+    public class VerifyPictureManager : DomainService, IVerifyPictureManager
     {
         private readonly IVerifyPictureProvider _verifyPictureProvider;
         private readonly IDistributedCache<VerifyPictureData> _cache;
@@ -44,7 +44,7 @@ namespace Abp.Captcha.VerifyPicture
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public async Task<bool> Validation(ValidationModel data)
+        public async Task<bool> ValidationAsync(ValidationModel data)
         {
             var result = await _cache.GetAsync(data.Index);
             return result != null ? result.IsValid(data.Code) : false;

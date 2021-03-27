@@ -10,6 +10,10 @@ using Volo.Abp.DependencyInjection;
 
 namespace Abp.Captcha.Slider
 {
+    /// <summary>
+    /// 滑条验证特性
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Method)]
     public class SliderAttribute : Attribute, IAsyncActionFilter, ITransientDependency
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
@@ -22,7 +26,7 @@ namespace Abp.Captcha.Slider
             }
 
             var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
-            if (!await _verifyPictureAppService.ValidationAsync(new ValidationModel(data.Value.ToString().Split(','))))
+            if (!await _verifyPictureAppService.VerificationAsync(new ValidationModel(Array.ConvertAll(data.Value.ToString().Split(','), int.Parse))))
             {
                 throw new UserFriendlyException("The verification code is wrong!");
             }

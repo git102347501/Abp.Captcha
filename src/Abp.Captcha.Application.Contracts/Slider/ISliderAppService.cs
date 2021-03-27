@@ -1,5 +1,4 @@
-﻿using Abp.Captcha.Slider.Dtos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +16,6 @@ namespace Abp.Captcha.Slider
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<bool> ValidationAsync(ValidationModel input);
+        Task<bool> VerificationAsync(ValidationModel input);
     }
 }

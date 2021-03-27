@@ -37,7 +37,7 @@ namespace Abp.Captcha.VerifyPicture
         /// <returns></returns>
         public async Task<bool> ValidationAsync(ValidationModel input)
         {
-            return await _verifyPictureManager.Validation(input);
+            return await _verifyPictureManager.ValidationAsync(input);
         }
     }
 }
