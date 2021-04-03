@@ -24,6 +24,22 @@ namespace Abp.Captcha.Slider
         }
 
         /// <summary>
+        /// 获取滑条验证令牌
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public async Task<string> GetVerificationTokenAsync(ValidationModel<string> data)
+        {
+            // 审查会话安全性
+            await VerificationActionAsync(data.ActionData);
+
+            // 缓存会话
+            var id = GuidGenerator.Create().ToString();
+            await _cacheToken.SetAsync(id, new SliderActionTokenCacheModel(data.ActionData.Ip));
+            return id;
+        }
+
+        /// <summary>
         /// 验证滑条是否有效
         /// </summary>
         /// <param name="data"></param>

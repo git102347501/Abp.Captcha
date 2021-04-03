@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Abp.Captcha.Jigsaw
 {
-    interface IJigsawManager
+    public interface IJigsawManager
     {
     }
 }

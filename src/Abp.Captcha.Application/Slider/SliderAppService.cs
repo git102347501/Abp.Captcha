@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp;
 
 namespace Abp.Captcha.Slider
 {
@@ -18,10 +19,21 @@ namespace Abp.Captcha.Slider
         }
 
         /// <summary>
+        /// 获取滑条验证令牌
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async Task<string> GetVerificationTokenAsync(ValidationModel<string> input)
+        {
+            return await _silderManager.GetVerificationTokenAsync(input);
+        }
+
+        /// <summary>
         /// 验证滑条令牌是否有效
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [RemoteService(IsMetadataEnabled = false)]
         public async Task<bool> VerificationTokenAsync(ValidationModel<string> input)
         {
             return await _silderManager.VerificationTokenAsync(input);

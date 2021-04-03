@@ -19,9 +19,10 @@ namespace Abp.Captcha.Slider
         /// </summary>
         public SliderActionModel ActionData { get; set; }
 
-        public ValidationModel(T data)
+        public ValidationModel(T data, SliderActionModel actionData)
         {
             Data = data;
+            ActionData = actionData;
         }
     }
 }

@@ -68,6 +68,11 @@ namespace Abp.Captcha.Slider
             });
         }
 
+        /// <summary>
+        /// 验证滑动速率
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         private bool VerificationSpeed(int[] data)
         {
             var results = new List<int>();
@@ -101,9 +106,9 @@ namespace Abp.Captcha.Slider
                 {
                     end += results[i];
                 }
-                start = start / count;
-                center = center / count;
-                end = end / count;
+                start /= count;
+                center /= count;
+                end /= count;
                 if (start < center && end > center)
                 {
                     return true;

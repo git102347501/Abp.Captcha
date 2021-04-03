@@ -8,7 +8,7 @@ namespace Abp.Captcha.Jigsaw
     /// <summary>
     /// 拼图信息类
     /// </summary>
-    public class JigsawMaster: CreationAuditedEntity<int>
+    public class JigsawMaster : CreationAuditedEntity<int>
     {
         /// <summary>
         /// 滑动运动线性

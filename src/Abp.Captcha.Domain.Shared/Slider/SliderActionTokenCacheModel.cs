@@ -7,5 +7,10 @@ namespace Abp.Captcha.Slider
     public class SliderActionTokenCacheModel
     {
         public string Ip { get; set; }
+
+        public SliderActionTokenCacheModel(string ip)
+        {
+            this.Ip = ip;
+        }
     }
 }
