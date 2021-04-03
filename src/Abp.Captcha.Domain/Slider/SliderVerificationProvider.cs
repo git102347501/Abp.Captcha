@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp;
@@ -33,15 +34,19 @@ namespace Abp.Captcha.Slider
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public async Task<bool> VerificationAsync(ValidationModel data)
+        public async Task<bool> VerificationAsync(ValidationModel<int[]> data)
         {
             // 判断数字滑动速率是否超出正常值
             if (!await VerificationAverage(data.Data))
             {
                 return false;
             }
-            // 判断数字速率是否由慢变快
 
+            // 判断数字速率是否由慢变快
+            if (!VerificationSpeed(data.Data))
+            {
+                return false;
+            }
             // 根
             return true;
         }
@@ -61,6 +66,50 @@ namespace Abp.Captcha.Slider
                 int agv = sum / data.Length;
                 return agv < _averageMax && agv > _averageMin;
             });
+        }
+
+        private bool VerificationSpeed(int[] data)
+        {
+            var results = new List<int>();
+            for (int i = 0; i < data.Length - 1; i++)
+            {
+                results.Add(data[i + 1] - data[i]);
+            }
+            var couunt = results.Distinct().Count();
+            if (couunt > 1)
+            {
+                var start = 0;
+                var center = 0;
+                var end = 0;
+
+                while (results.Count == results.Count / 3 * 3)
+                {
+                    results.Remove(results.Last());
+                }
+                var count = results.Count / 3;
+                for (int i = 0; i < count; i++)
+                {
+                    start += results[i];
+                }
+
+                for (int i = count; i < (count * 2); i++)
+                {
+                    center += results[i];
+                }
+
+                for (int i = (count * 2); i < (results.Count); i++)
+                {
+                    end += results[i];
+                }
+                start = start / count;
+                center = center / count;
+                end = end / count;
+                if (start < center && end > center)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

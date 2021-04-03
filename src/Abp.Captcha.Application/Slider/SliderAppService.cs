@@ -18,11 +18,21 @@ namespace Abp.Captcha.Slider
         }
 
         /// <summary>
+        /// 验证滑条令牌是否有效
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public async Task<bool> VerificationTokenAsync(ValidationModel<string> input)
+        {
+            return await _silderManager.VerificationTokenAsync(input);
+        }
+
+        /// <summary>
         /// 验证滑条数据是否有效
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public async Task<bool> VerificationAsync(ValidationModel input)
+        public async Task<bool> VerificationAsync(ValidationModel<int[]> input)
         {
             return await _silderManager.VerificationAsync(input);
         }

@@ -19,15 +19,25 @@ namespace Abp.Captcha.Slider
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
+            var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
             var data = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "Data");
 
             if (data.Key.IsNullOrWhiteSpace())
             {
-                throw new UserFriendlyException("The verification code is not valid!");
+                var token = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "Token");
+                if (token.Key.IsNullOrWhiteSpace())
+                {
+                    var valTokendata = new ValidationModel<string>(token.Value);
+                    valTokendata.ActionData = new SliderActionModel(context.HttpContext.Connection.RemoteIpAddress.ToString());
+                    if (!await _verifyPictureAppService.VerificationTokenAsync(valTokendata))
+                    {
+                        throw new UserFriendlyException("The verification code is wrong!");
+                    }
+                }
+               throw new UserFriendlyException("The verification code is not valid!");
             }
 
-            var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
-            var valdata = new ValidationModel(Array.ConvertAll(data.Value.ToString().Split(','), int.Parse));
+            var valdata = new ValidationModel<int[]>(Array.ConvertAll(data.Value.ToString().Split(','), int.Parse));
             valdata.ActionData = new SliderActionModel(context.HttpContext.Connection.RemoteIpAddress.ToString());
             if (!await _verifyPictureAppService.VerificationAsync(valdata))
             {

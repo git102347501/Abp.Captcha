@@ -39,7 +39,7 @@ export class CaptchaSliderComponent implements OnInit {
 		});
   }
   
-  @HostListener('mousedown', ['$event'])
+  @HostListener('window:mousedown', ['$event'])
   onMousedown(event: MouseEvent) {
     console.log('mousedown');
     this.slider = true;
@@ -56,7 +56,7 @@ export class CaptchaSliderComponent implements OnInit {
    * 鼠标移动
    * @param event 
    */
-  @HostListener('mousemove', ['$event'])
+  @HostListener('window:mousemove', ['$event'])
   onMousemove(event: MouseEvent) {
     console.log('onMousemove');
     if (!this.slider || this.loading == true) {
@@ -101,7 +101,7 @@ export class CaptchaSliderComponent implements OnInit {
    * 鼠标离开
    * @param event 
    */
-  @HostListener('mouseup', ['$event'])
+  @HostListener('window:mouseup', ['$event'])
   onMouseup(event: MouseEvent) {
     var event = event || window.event;
     var moveX = event.clientX - this.diffX;
@@ -145,7 +145,9 @@ export class CaptchaSliderComponent implements OnInit {
     var headers = new HttpHeaders({ Data : data });
     this.http.get(this.url + 'api/Captcha/sample/slidertest', { headers: headers })
     .pipe(mergeMap(result => of(result)), catchError(e => { 
-      console.dir(e.error.message);
+      // console.dir(e.error.message);
+      // var error = e.error;
+      // var message = error.message;
       if (e.status !== 200) {
         this.errorSlider(e.error.message ? e.error.message : '验证失败，请重试');
         return of(undefined);

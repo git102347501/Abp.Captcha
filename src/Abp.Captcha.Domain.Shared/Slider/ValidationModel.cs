@@ -7,19 +7,19 @@ namespace Abp.Captcha.Slider
     /// <summary>
     /// 滑条验证数据模型
     /// </summary>
-    public class ValidationModel
+    public class ValidationModel<T>
     {
         /// <summary>
         /// 请求数据
         /// </summary>
-        public int[] Data { get; set; }
+        public T Data { get; set; }
 
         /// <summary>
         /// 会话信息
         /// </summary>
         public SliderActionModel ActionData { get; set; }
 
-        public ValidationModel(int[] data)
+        public ValidationModel(T data)
         {
             Data = data;
         }

@@ -8,6 +8,6 @@ namespace Abp.Captcha.Slider
 {
     public interface ISliderVerificationProvider
     {
-        Task<bool> VerificationAsync(ValidationModel data);
+        Task<bool> VerificationAsync(ValidationModel<int[]> data);
     }
 }

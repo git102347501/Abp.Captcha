@@ -16,6 +16,7 @@ namespace Abp.Captcha.Slider
     {
         private readonly IDistributedCache<SliderActionCacheModel> _cache;
         private readonly ISliderVerificationProvider _sliderVerificationProvider;
+        private readonly IDistributedCache<SliderActionTokenCacheModel> _cacheToken;
         public SilderManager(IDistributedCache<SliderActionCacheModel> cache, ISliderVerificationProvider sliderVerificationProvider)
         {
             _cache = cache;
@@ -27,7 +28,27 @@ namespace Abp.Captcha.Slider
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public async Task<bool> VerificationAsync(ValidationModel data)
+        public async Task<bool> VerificationTokenAsync(ValidationModel<string> data)
+        {
+            // 审查会话安全性
+            await VerificationActionAsync(data.ActionData);
+
+            var result = await _cacheToken.GetAsync(data.Data);
+
+            if (result != null)
+            {
+                // 验证IP同源
+                return result.Ip == data.ActionData.Ip;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 验证滑条是否有效
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public async Task<bool> VerificationAsync(ValidationModel<int[]> data)
         {
             // 审查会话安全性
             await VerificationActionAsync(data.ActionData);
