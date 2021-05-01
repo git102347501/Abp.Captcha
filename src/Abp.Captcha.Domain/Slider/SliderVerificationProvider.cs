@@ -64,6 +64,9 @@ namespace Abp.Captcha.Slider
                     sum += item;
                 }
                 int agv = sum / data.Length;
+#if DEBUG
+                Console.WriteLine("滑动速率:" + agv.ToString());
+#endif
                 return agv < _averageMax && agv > _averageMin;
             });
         }
@@ -109,7 +112,11 @@ namespace Abp.Captcha.Slider
                 start /= count;
                 center /= count;
                 end /= count;
-                if (start < center && end > center)
+
+#if DEBUG
+                Console.WriteLine("滑动速度:" + start.ToString() + "-" + center.ToString() + "-" + end.ToString());
+#endif
+                if (start < center)
                 {
                     return true;
                 }

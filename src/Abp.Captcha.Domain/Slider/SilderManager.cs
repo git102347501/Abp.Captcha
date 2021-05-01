@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,12 +15,15 @@ namespace Abp.Captcha.Slider
     /// </summary>
     public class SilderManager : DomainService, ISilderManager
     {
+        private readonly IConfiguration _configuration;
         private readonly IDistributedCache<SliderActionCacheModel> _cache;
         private readonly ISliderVerificationProvider _sliderVerificationProvider;
         private readonly IDistributedCache<SliderActionTokenCacheModel> _cacheToken;
-        public SilderManager(IDistributedCache<SliderActionCacheModel> cache, ISliderVerificationProvider sliderVerificationProvider)
+
+        public SilderManager(IConfiguration configuration, IDistributedCache<SliderActionCacheModel> cache, ISliderVerificationProvider sliderVerificationProvider)
         {
             _cache = cache;
+            _configuration = configuration;
             _sliderVerificationProvider = sliderVerificationProvider;
         }
 
@@ -80,8 +84,9 @@ namespace Abp.Captcha.Slider
         public virtual async Task VerificationActionAsync(SliderActionModel sliderAction)
         {
             var cacheItem = await _cache.GetAsync(sliderAction.Ip);
+            var rquestsCount = int.Parse(_configuration["Verification:Slider:RequestsCount"]);
 
-            if (cacheItem != null && cacheItem.Count > 3)
+            if (cacheItem != null && cacheItem.Count > rquestsCount)
             {
                 throw new UserFriendlyException("请求频繁,请在60秒后重新尝试");
             }

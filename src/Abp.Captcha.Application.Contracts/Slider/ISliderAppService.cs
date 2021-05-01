@@ -12,6 +12,13 @@ namespace Abp.Captcha.Slider
     public interface ISliderAppService : IApplicationService
     {
         /// <summary>
+        /// 获取令牌
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        Task<string> GetVerificationTokenAsync(ValidationModel<string> input);
+
+        /// <summary>
         /// 验证滑条令牌合法
         /// </summary>
         /// <param name="input"></param>

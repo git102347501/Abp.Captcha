@@ -23,6 +23,7 @@ namespace Abp.Captcha.Slider
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [RemoteService(IsMetadataEnabled = false)]
         public async Task<string> GetVerificationTokenAsync(ValidationModel<string> input)
         {
             return await _silderManager.GetVerificationTokenAsync(input);
@@ -44,6 +45,7 @@ namespace Abp.Captcha.Slider
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
+        [RemoteService(IsMetadataEnabled = false)]
         public async Task<bool> VerificationAsync(ValidationModel<int[]> input)
         {
             return await _silderManager.VerificationAsync(input);
