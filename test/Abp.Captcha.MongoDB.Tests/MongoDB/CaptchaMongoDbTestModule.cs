@@ -3,11 +3,11 @@ using Volo.Abp.Data;
 using Volo.Abp.Modularity;
 using Volo.Abp.Uow;
 
-namespace Abp.Captcha.MongoDB
+namespace MaigcalConch.Abp.Captcha.MongoDB
 {
     [DependsOn(
         typeof(CaptchaTestBaseModule),
-        typeof(CaptchaMongoDbModule)
+        typeof(MagicalConchCaptchaMongoDbModule)
         )]
     public class CaptchaMongoDbTestModule : AbpModule
     {

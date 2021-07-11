@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Services;
 
-namespace Abp.Captcha.VerifyPicture
+namespace MaigcalConch.Abp.Captcha.VerifyPicture
 {
     /// <summary>
     /// 图形验证码领域服务

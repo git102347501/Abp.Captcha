@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
 
-namespace Abp.Captcha.VerifyPicture
+namespace MaigcalConch.Abp.Captcha.VerifyPicture
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class CaptchaAttribute : Attribute, IAsyncActionFilter, ITransientDependency

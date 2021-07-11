@@ -1,4 +1,4 @@
-﻿namespace Abp.Captcha.MultiTenancy
+﻿namespace MaigcalConch.Abp.Captcha.MultiTenancy
 {
     public static class MultiTenancyConsts
     {

@@ -13,9 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using Abp.Captcha.Localization;
-using Abp.Captcha.MultiTenancy;
-using Abp.Captcha.Web;
+using MaigcalConch.Abp.Captcha.Localization;
+using MaigcalConch.Abp.Captcha.MultiTenancy;
+using MaigcalConch.Abp.Captcha.Web;
 using StackExchange.Redis;
 using Volo.Abp;
 using Volo.Abp.AspNetCore.Authentication.OAuth;
@@ -49,11 +49,11 @@ using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
-        typeof(CaptchaWebModule),
-        typeof(CaptchaHttpApiClientModule),
+        typeof(MagicalConchCaptchaWebModule),
+        typeof(MagicalConchCaptchaHttpApiClientModule),
         typeof(AbpAspNetCoreAuthenticationOpenIdConnectModule),
         typeof(AbpAspNetCoreMvcClientModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
@@ -78,8 +78,8 @@ namespace Abp.Captcha
             {
                 options.AddAssemblyResource(
                     typeof(CaptchaResource),
-                    typeof(CaptchaDomainSharedModule).Assembly,
-                    typeof(CaptchaApplicationContractsModule).Assembly,
+                    typeof(MagicalConchCaptchaDomainSharedModule).Assembly,
+                    typeof(MagicalConchCaptchaApplicationContractsModule).Assembly,
                     typeof(CaptchaWebHostModule).Assembly
                 );
             });
@@ -177,9 +177,9 @@ namespace Abp.Captcha
             {
                 Configure<AbpVirtualFileSystemOptions>(options =>
                 {
-                    options.FileSets.ReplaceEmbeddedByPhysical<CaptchaDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Abp.Captcha.Domain", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<CaptchaApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Abp.Captcha.Application.Contracts", Path.DirectorySeparatorChar)));
-                    options.FileSets.ReplaceEmbeddedByPhysical<CaptchaWebModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Abp.Captcha.Web", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<MagicalConchCaptchaDomainSharedModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Abp.Captcha.Domain", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<MagicalConchCaptchaApplicationContractsModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Abp.Captcha.Application.Contracts", Path.DirectorySeparatorChar)));
+                    options.FileSets.ReplaceEmbeddedByPhysical<MagicalConchCaptchaWebModule>(Path.Combine(hostingEnvironment.ContentRootPath, string.Format("..{0}..{0}src{0}Abp.Captcha.Web", Path.DirectorySeparatorChar)));
                 });
             }
         }

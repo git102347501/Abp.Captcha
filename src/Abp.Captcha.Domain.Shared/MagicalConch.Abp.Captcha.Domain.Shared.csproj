@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>MagicalConch.Abp.Captcha</RootNamespace>
+    <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    <Description>适用于Abp vNext模块引用，用于提供验证用户身份功能的领域共享层</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <RepositoryType>github</RepositoryType>
+    <RepositoryUrl>https://github.com/git102347501/Abp.Captcha</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/git102347501/Abp.Captcha</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIconUrl />
+    <Version>0.3.0.1</Version>
+    <Authors>MagicalConch</Authors>
+    <Company>MagicalConch</Company>
+    <Product>Abp.Captcha</Product>
+    <Copyright>https://github.com/git102347501/Abp.Captcha/blob/main/LICENSE</Copyright>
+    <PackageId>MagicalConch.Abp.Captcha.Domain.Shared</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Validation" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Captcha\*.json" />
+    <Content Remove="Localization\Captcha\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\z1023\Pictures\Saved Pictures\微信图片_20210703133409.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

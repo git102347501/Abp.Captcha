@@ -31,9 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Abp.Captcha.Web\Abp.Captcha.Web.csproj" />
-    <ProjectReference Include="..\..\src\Abp.Captcha.HttpApi.Client\Abp.Captcha.HttpApi.Client.csproj" />
-    <ProjectReference Include="..\Abp.Captcha.Host.Shared\Abp.Captcha.Host.Shared.csproj" />
+    <ProjectReference Include="..\..\src\Abp.Captcha.Web\MagicalConch.Abp.Captcha.Web.csproj" />
+    <ProjectReference Include="..\..\src\Abp.Captcha.HttpApi.Client\MagicalConch.Abp.Captcha.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\Abp.Captcha.Host.Shared\MagicalConch.Abp.Captcha.Host.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

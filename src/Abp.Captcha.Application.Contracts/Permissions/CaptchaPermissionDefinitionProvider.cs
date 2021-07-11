@@ -1,8 +1,8 @@
-﻿using Abp.Captcha.Localization;
+﻿using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
-namespace Abp.Captcha.Permissions
+namespace MaigcalConch.Abp.Captcha.Permissions
 {
     public class CaptchaPermissionDefinitionProvider : PermissionDefinitionProvider
     {

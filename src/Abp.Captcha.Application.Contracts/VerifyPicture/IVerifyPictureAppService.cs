@@ -1,11 +1,11 @@
-﻿using Abp.Captcha.VerifyPicture.Dtos;
+﻿using MaigcalConch.Abp.Captcha.VerifyPicture.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 
-namespace Abp.Captcha.VerifyPicture
+namespace MaigcalConch.Abp.Captcha.VerifyPicture
 {
     /// <summary>
     /// 验证图片应用服务接口

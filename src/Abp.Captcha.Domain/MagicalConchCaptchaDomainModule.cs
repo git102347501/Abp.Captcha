@@ -2,15 +2,15 @@
 using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
         typeof(AbpDddDomainModule),
         typeof(AbpCachingModule),
-        typeof(CaptchaDomainSharedModule),
+        typeof(MagicalConchCaptchaDomainSharedModule),
         typeof(AbpCachingModule)
     )]
-    public class CaptchaDomainModule : AbpModule
+    public class MagicalConchCaptchaDomainModule : AbpModule
     {
 
     }

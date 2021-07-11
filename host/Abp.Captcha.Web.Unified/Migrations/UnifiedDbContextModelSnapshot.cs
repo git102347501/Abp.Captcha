@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Abp.Captcha.EntityFrameworkCore;
+using MaigcalConch.Abp.Captcha.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Abp.Captcha.Migrations
+namespace MaigcalConch.Abp.Captcha.Migrations
 {
     [DbContext(typeof(UnifiedDbContext))]
     partial class UnifiedDbContextModelSnapshot : ModelSnapshot

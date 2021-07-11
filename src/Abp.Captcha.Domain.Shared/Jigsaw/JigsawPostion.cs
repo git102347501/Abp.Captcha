@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abp.Captcha.Jigsaw
+namespace MaigcalConch.Abp.Captcha.Jigsaw
 {
     /// <summary>
     /// 拼图滑动坐标信息

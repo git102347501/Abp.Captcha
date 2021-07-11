@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Settings;
 
-namespace Abp.Captcha.Settings
+namespace MaigcalConch.Abp.Captcha.Settings
 {
     public class CaptchaSettingDefinitionProvider : SettingDefinitionProvider
     {

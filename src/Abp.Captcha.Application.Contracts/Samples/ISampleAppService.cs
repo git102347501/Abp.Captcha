@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Volo.Abp.Application.Services;
 
-namespace Abp.Captcha.Samples
+namespace MaigcalConch.Abp.Captcha.Samples
 {
     public interface ISampleAppService : IApplicationService
     {

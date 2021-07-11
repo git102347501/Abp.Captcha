@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Abp.Captcha.Web
+namespace MaigcalConch.Abp.Captcha.Web
 {
     public class CaptchaWebAutoMapperProfile : Profile
     {

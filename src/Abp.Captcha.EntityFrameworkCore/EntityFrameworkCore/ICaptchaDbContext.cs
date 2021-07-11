@@ -1,7 +1,7 @@
 ﻿using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Abp.Captcha.EntityFrameworkCore
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
     [ConnectionStringName(CaptchaDbProperties.ConnectionStringName)]
     public interface ICaptchaDbContext : IEfCoreDbContext

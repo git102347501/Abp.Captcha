@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace Abp.Captcha.Blazor
+namespace MaigcalConch.Abp.Captcha.Blazor
 {
     public class CaptchaBlazorAutoMapperProfile : Profile
     {

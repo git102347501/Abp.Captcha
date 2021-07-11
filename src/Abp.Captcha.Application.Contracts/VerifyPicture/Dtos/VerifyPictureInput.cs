@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Volo.Abp.Application.Dtos;
 
-namespace Abp.Captcha.VerifyPicture.Dtos
+namespace MaigcalConch.Abp.Captcha.VerifyPicture.Dtos
 {
     /// <summary>
     /// 获取验证图片入参

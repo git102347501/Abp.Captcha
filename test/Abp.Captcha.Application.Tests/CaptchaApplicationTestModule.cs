@@ -1,9 +1,9 @@
 ﻿using Volo.Abp.Modularity;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
-        typeof(CaptchaApplicationModule),
+        typeof(MagicalConchCaptchaApplicationModule),
         typeof(CaptchaDomainTestModule)
         )]
     public class CaptchaApplicationTestModule : AbpModule

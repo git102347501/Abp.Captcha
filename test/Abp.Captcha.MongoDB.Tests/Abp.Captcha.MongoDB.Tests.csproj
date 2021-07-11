@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
     <PackageReference Include="Mongo2Go" Version="2.2.14" />
-    <ProjectReference Include="..\..\src\Abp.Captcha.MongoDB\Abp.Captcha.MongoDB.csproj" />
+    <ProjectReference Include="..\..\src\Abp.Captcha.MongoDB\MagicalConch.Abp.Captcha.MongoDB.csproj" />
     <ProjectReference Include="..\Abp.Captcha.TestBase\Abp.Captcha.TestBase.csproj" />
   </ItemGroup>
 

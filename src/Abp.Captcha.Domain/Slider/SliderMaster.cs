@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abp.Captcha.Slider
+namespace MaigcalConch.Abp.Captcha.Slider
 {
     class SliderMaster
     {

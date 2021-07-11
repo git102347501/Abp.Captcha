@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Volo.Abp.UI.Navigation;
 
-namespace Abp.Captcha.Web.Menus
+namespace MaigcalConch.Abp.Captcha.Web.Menus
 {
     public class CaptchaMenuContributor : IMenuContributor
     {

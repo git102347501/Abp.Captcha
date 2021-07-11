@@ -1,10 +1,10 @@
 ﻿using Volo.Abp.Http.Client.IdentityModel;
 using Volo.Abp.Modularity;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
-        typeof(CaptchaHttpApiClientModule),
+        typeof(MagicalConchCaptchaHttpApiClientModule),
         typeof(AbpHttpClientIdentityModelModule)
         )]
     public class CaptchaConsoleApiClientModule : AbpModule

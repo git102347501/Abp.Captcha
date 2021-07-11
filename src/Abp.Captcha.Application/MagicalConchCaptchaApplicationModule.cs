@@ -3,22 +3,22 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
-        typeof(CaptchaDomainModule),
-        typeof(CaptchaApplicationContractsModule),
+        typeof(MagicalConchCaptchaDomainModule),
+        typeof(MagicalConchCaptchaApplicationContractsModule),
         typeof(AbpDddApplicationModule),
         typeof(AbpAutoMapperModule)
         )]
-    public class CaptchaApplicationModule : AbpModule
+    public class MagicalConchCaptchaApplicationModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            context.Services.AddAutoMapperObjectMapper<CaptchaApplicationModule>();
+            context.Services.AddAutoMapperObjectMapper<MagicalConchCaptchaApplicationModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<CaptchaApplicationModule>(validate: true);
+                options.AddMaps<MagicalConchCaptchaApplicationModule>(validate: true);
             });
         }
     }

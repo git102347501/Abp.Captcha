@@ -1,7 +1,7 @@
-﻿using Abp.Captcha.Localization;
+﻿using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public abstract class CaptchaController : AbpController
     {

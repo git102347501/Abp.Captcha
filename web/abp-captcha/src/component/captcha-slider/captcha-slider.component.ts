@@ -15,7 +15,7 @@ export class CaptchaSliderComponent implements OnInit {
   sliderbtn!: ElementRef;
   @ViewChild('slidercontain') 
   slidercontain!: ElementRef;
-  private url = 'http://localhost:44371/';
+  private url = 'https://localhost:44335/';
   public diffX: any;
   public diffY: any;
   public left: any;
@@ -39,7 +39,7 @@ export class CaptchaSliderComponent implements OnInit {
 		});
   }
   
-  @HostListener('window:mousedown', ['$event'])
+  @HostListener('mousedown', ['$event'])
   onMousedown(event: MouseEvent) {
     console.log('mousedown');
     this.slider = true;
@@ -70,11 +70,11 @@ export class CaptchaSliderComponent implements OnInit {
     // 'Width:' + this.sliderbtn.nativeElement.style.width + 
     // '差值：' + (this.slidercontain.nativeElement.offsetWidth - moveX));
 
-    // 如果挪出滑条区域，停止滑动
-    if (moveY <= -15 || moveY >= 15) {
-      this.closeSlider();
-      return;
-    }
+    // // 如果挪出滑条区域，停止滑动
+    // if (moveY <= -15 || moveY >= 15) {
+    //   this.closeSlider();
+    //   return;
+    // }
 
     // 如果推拽到底
     if((this.slidercontain.nativeElement.offsetWidth - moveX) < 40){
@@ -107,7 +107,7 @@ export class CaptchaSliderComponent implements OnInit {
     var moveX = event.clientX - this.diffX;
 
     moveX = 0;
-    if(this.loading === false){
+    if (this.loading === false) {
       this.closeSlider();
     }
     console.log('mouseup:left:' + this.left);
@@ -127,6 +127,7 @@ export class CaptchaSliderComponent implements OnInit {
     this.loading = false;
   }
 
+  // 验证数据
   private verifyData(){
     this.loading = true;
     this.left = 324;

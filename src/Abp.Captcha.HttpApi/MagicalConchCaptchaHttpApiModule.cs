@@ -1,22 +1,22 @@
 ﻿using Localization.Resources.AbpUi;
-using Abp.Captcha.Localization;
+using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
-        typeof(CaptchaApplicationContractsModule),
+        typeof(MagicalConchCaptchaApplicationContractsModule),
         typeof(AbpAspNetCoreMvcModule))]
-    public class CaptchaHttpApiModule : AbpModule
+    public class MagicalConchCaptchaHttpApiModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(CaptchaHttpApiModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(MagicalConchCaptchaHttpApiModule).Assembly);
             });
         }
 

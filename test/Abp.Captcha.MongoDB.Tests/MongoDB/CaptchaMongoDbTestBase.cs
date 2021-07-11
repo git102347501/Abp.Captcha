@@ -1,4 +1,4 @@
-﻿namespace Abp.Captcha.MongoDB
+﻿namespace MaigcalConch.Abp.Captcha.MongoDB
 {
     /* This class can be used as a base class for MongoDB integration tests,
      * while SampleRepository_Tests uses a different approach.

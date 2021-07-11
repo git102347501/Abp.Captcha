@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abp.Captcha.VerifyPicture
+namespace MaigcalConch.Abp.Captcha.VerifyPicture
 {
     /// <summary>
     /// 图片验证码缓存信息类

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 
-namespace Abp.Captcha.EntityFrameworkCore
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
     public static class CaptchaDbContextModelCreatingExtensions
     {

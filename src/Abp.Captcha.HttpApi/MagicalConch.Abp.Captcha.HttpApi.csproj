@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>MagicalConch.Abp.Captcha</RootNamespace>
+    <Description>适用于Abp vNext模块引用，用于提供验证用户身份功能的HttpApi层</Description>
+    <Version>0.3.0.2</Version>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>MagicalConch</Authors>
+    <Company>MagicalConch</Company>
+    <Product>Abp.Captcha</Product>
+    <PackageId>MagicalConch.Abp.Captcha.HttpApi</PackageId>
+    <Copyright>https://github.com/git102347501/Abp.Captcha/blob/main/LICENSE</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/git102347501/Abp.Captcha</PackageProjectUrl>
+    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/git102347501/Abp.Captcha</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="4.0.1" />
+    <ProjectReference Include="..\Abp.Captcha.Application.Contracts\MagicalConch.Abp.Captcha.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\z1023\Pictures\Saved Pictures\微信图片_20210703133409.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,4 +1,4 @@
-namespace Abp.Captcha.Web.Pages.Captcha
+namespace MaigcalConch.Abp.Captcha.Web.Pages.Captcha
 {
     public class IndexModel : CaptchaPageModel
     {

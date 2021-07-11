@@ -1,4 +1,4 @@
-﻿using Abp.Captcha.Localization;
+﻿using MaigcalConch.Abp.Captcha.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,15 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Abp.Captcha.Slider
+namespace MaigcalConch.Abp.Captcha.Slider
 {
     /// <summary>
     /// 滑条控制器
     /// </summary>
-    public class SliderController : AbpController
+    public class SliderController : CaptchaController
     {
         private readonly ISliderAppService _sliderAppService;
-        protected SliderController(ISliderAppService sliderAppService)
+        public SliderController(ISliderAppService sliderAppService)
         {
             LocalizationResource = typeof(CaptchaResource);
             _sliderAppService = sliderAppService;

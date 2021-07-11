@@ -2,7 +2,7 @@
 using Shouldly;
 using Xunit;
 
-namespace Abp.Captcha.Samples
+namespace MaigcalConch.Abp.Captcha.Samples
 {
     public class SampleAppService_Tests : CaptchaApplicationTestBase
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Abp.Captcha.EntityFrameworkCore
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
     public class CaptchaHttpApiHostMigrationsDbContext : AbpDbContext<CaptchaHttpApiHostMigrationsDbContext>
     {

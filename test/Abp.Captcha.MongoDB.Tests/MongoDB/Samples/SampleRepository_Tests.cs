@@ -1,7 +1,7 @@
-﻿using Abp.Captcha.Samples;
+﻿using MaigcalConch.Abp.Captcha.Samples;
 using Xunit;
 
-namespace Abp.Captcha.MongoDB.Samples
+namespace MaigcalConch.Abp.Captcha.MongoDB.Samples
 {
     [Collection(MongoTestCollection.Name)]
     public class SampleRepository_Tests : SampleRepository_Tests<CaptchaMongoDbTestModule>

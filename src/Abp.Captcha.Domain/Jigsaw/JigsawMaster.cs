@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Abp.Captcha.Jigsaw
+namespace MaigcalConch.Abp.Captcha.Jigsaw
 {
     /// <summary>
     /// 拼图信息类

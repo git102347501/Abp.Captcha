@@ -1,7 +1,7 @@
-﻿using Abp.Captcha.Localization;
+﻿using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
-namespace Abp.Captcha.Pages
+namespace MaigcalConch.Abp.Captcha.Pages
 {
     public abstract class CaptchaPageModel : AbpPageModel
     {

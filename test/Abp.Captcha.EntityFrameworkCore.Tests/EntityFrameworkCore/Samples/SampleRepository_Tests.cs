@@ -1,6 +1,6 @@
-﻿using Abp.Captcha.Samples;
+﻿using MaigcalConch.Abp.Captcha.Samples;
 
-namespace Abp.Captcha.EntityFrameworkCore.Samples
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore.Samples
 {
     public class SampleRepository_Tests : SampleRepository_Tests<CaptchaEntityFrameworkCoreTestModule>
     {

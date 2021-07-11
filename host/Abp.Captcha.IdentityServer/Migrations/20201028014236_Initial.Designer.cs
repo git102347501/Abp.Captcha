@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Abp.Captcha.EntityFrameworkCore;
+using MaigcalConch.Abp.Captcha.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace Abp.Captcha.Migrations
+namespace MaigcalConch.Abp.Captcha.Migrations
 {
     [DbContext(typeof(IdentityServerHostMigrationsDbContext))]
     [Migration("20201028014236_Initial")]

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Abp.Captcha.Pages
+namespace MaigcalConch.Abp.Captcha.Pages
 {
     public class IndexModel : PageModel
     {

@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Services;
 
-namespace Abp.Captcha.Slider
+namespace MaigcalConch.Abp.Captcha.Slider
 {
     /// <summary>
     /// 滑条领域服务

@@ -12,6 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Abp.Captcha.HttpApi.Client\Abp.Captcha.HttpApi.Client.csproj" />
+        <ProjectReference Include="..\Abp.Captcha.HttpApi.Client\MagicalConch.Abp.Captcha.HttpApi.Client.csproj" />
     </ItemGroup>
 </Project>

@@ -3,11 +3,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel.Client;
 using Microsoft.Extensions.Configuration;
-using Abp.Captcha.Samples;
+using MaigcalConch.Abp.Captcha.Samples;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.IdentityModel;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public class ClientDemoService : ITransientDependency
     {

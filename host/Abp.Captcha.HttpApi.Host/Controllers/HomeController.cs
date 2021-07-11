@@ -1,8 +1,8 @@
-﻿using Abp.Captcha.VerifyPicture;
+﻿using MaigcalConch.Abp.Captcha.VerifyPicture;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc;
 
-namespace Abp.Captcha.Controllers
+namespace MaigcalConch.Abp.Captcha.Controllers
 {
     public class HomeController : AbpController
     {

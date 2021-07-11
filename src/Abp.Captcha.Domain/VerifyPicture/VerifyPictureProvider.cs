@@ -7,7 +7,7 @@ using System.IO;
 using System.Drawing.Imaging;
 using Volo.Abp.DependencyInjection;
 
-namespace Abp.Captcha.VerifyPicture
+namespace MaigcalConch.Abp.Captcha.VerifyPicture
 {
     /// <summary>
     /// 图片生成提供实现

@@ -1,14 +1,14 @@
-﻿using Abp.Captcha.Localization;
+﻿using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.Application.Services;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public abstract class CaptchaAppService : ApplicationService
     {
         protected CaptchaAppService()
         {
             LocalizationResource = typeof(CaptchaResource);
-            ObjectMapperContext = typeof(CaptchaApplicationModule);
+            ObjectMapperContext = typeof(MagicalConchCaptchaApplicationModule);
         }
     }
 }

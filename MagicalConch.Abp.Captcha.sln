@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Domain.Shared", "src\Abp.Captcha.Domain.Shared\Abp.Captcha.Domain.Shared.csproj", "{D64C1577-4929-4B60-939E-96DE1534891A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Domain.Shared", "src\Abp.Captcha.Domain.Shared\MagicalConch.Abp.Captcha.Domain.Shared.csproj", "{D64C1577-4929-4B60-939E-96DE1534891A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Domain", "src\Abp.Captcha.Domain\Abp.Captcha.Domain.csproj", "{F2840BC7-0188-4606-9126-DADD0F5ABF7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Domain", "src\Abp.Captcha.Domain\MagicalConch.Abp.Captcha.Domain.csproj", "{F2840BC7-0188-4606-9126-DADD0F5ABF7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Application.Contracts", "src\Abp.Captcha.Application.Contracts\Abp.Captcha.Application.Contracts.csproj", "{BD65D04F-08D5-40C1-8C24-77CA0BACB877}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Application.Contracts", "src\Abp.Captcha.Application.Contracts\MagicalConch.Abp.Captcha.Application.Contracts.csproj", "{BD65D04F-08D5-40C1-8C24-77CA0BACB877}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Application", "src\Abp.Captcha.Application\Abp.Captcha.Application.csproj", "{78040F9E-3501-4A40-82DF-00A597710F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Application", "src\Abp.Captcha.Application\MagicalConch.Abp.Captcha.Application.csproj", "{78040F9E-3501-4A40-82DF-00A597710F35}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{649A3FFA-182F-4E56-9717-E6A9A2BEC545}"
 EndProject
@@ -17,13 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CCD2960C-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "host", "host", "{E400416D-2895-4512-9D17-90681EEC7E0A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.EntityFrameworkCore", "src\Abp.Captcha.EntityFrameworkCore\Abp.Captcha.EntityFrameworkCore.csproj", "{0CE86223-D31D-4315-A1F5-87BA3EE1B844}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.EntityFrameworkCore", "src\Abp.Captcha.EntityFrameworkCore\MagicalConch.Abp.Captcha.EntityFrameworkCore.csproj", "{0CE86223-D31D-4315-A1F5-87BA3EE1B844}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.MongoDB", "src\Abp.Captcha.MongoDB\Abp.Captcha.MongoDB.csproj", "{F1C58097-4C08-4D88-8976-6B3389391481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.MongoDB", "src\Abp.Captcha.MongoDB\MagicalConch.Abp.Captcha.MongoDB.csproj", "{F1C58097-4C08-4D88-8976-6B3389391481}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.HttpApi", "src\Abp.Captcha.HttpApi\Abp.Captcha.HttpApi.csproj", "{077AA5F8-8B61-420C-A6B5-0150A66FDB34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.HttpApi", "src\Abp.Captcha.HttpApi\MagicalConch.Abp.Captcha.HttpApi.csproj", "{077AA5F8-8B61-420C-A6B5-0150A66FDB34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.HttpApi.Client", "src\Abp.Captcha.HttpApi.Client\Abp.Captcha.HttpApi.Client.csproj", "{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.HttpApi.Client", "src\Abp.Captcha.HttpApi.Client\MagicalConch.Abp.Captcha.HttpApi.Client.csproj", "{36E2735F-CEAB-44C8-A6D1-2CDAFF399751}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.TestBase", "test\Abp.Captcha.TestBase\Abp.Captcha.TestBase.csproj", "{C5BB573D-3030-4BCB-88B7-F6A85C32766C}"
 EndProject
@@ -35,21 +35,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Domain.Tests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Application.Tests", "test\Abp.Captcha.Application.Tests\Abp.Captcha.Application.Tests.csproj", "{90CB5DC4-C040-45C7-8900-9688B26405BC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.HttpApi.Host", "host\Abp.Captcha.HttpApi.Host\Abp.Captcha.HttpApi.Host.csproj", "{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.HttpApi.Host", "host\Abp.Captcha.HttpApi.Host\MagicalConch.Abp.Captcha.HttpApi.Host.csproj", "{37B135B0-DAFE-4616-B25C-1BDF32FC44A2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Web", "src\Abp.Captcha.Web\Abp.Captcha.Web.csproj", "{3B7B6317-1B85-4164-8E11-75574F80AE17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Web", "src\Abp.Captcha.Web\MagicalConch.Abp.Captcha.Web.csproj", "{3B7B6317-1B85-4164-8E11-75574F80AE17}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.HttpApi.Client.ConsoleTestApp", "test\Abp.Captcha.HttpApi.Client.ConsoleTestApp\Abp.Captcha.HttpApi.Client.ConsoleTestApp.csproj", "{1EDCD6D4-DF3A-4E3B-ABB6-C0D0B373EAB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Web.Host", "host\Abp.Captcha.Web.Host\Abp.Captcha.Web.Host.csproj", "{73513786-B6C6-4A21-89C5-0FBDD0A46107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Web.Host", "host\Abp.Captcha.Web.Host\MagicalConch.Abp.Captcha.Web.Host.csproj", "{73513786-B6C6-4A21-89C5-0FBDD0A46107}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.IdentityServer", "host\Abp.Captcha.IdentityServer\Abp.Captcha.IdentityServer.csproj", "{690203F4-3CD5-4569-88D9-EE831EEA5F5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.IdentityServer", "host\Abp.Captcha.IdentityServer\MagicalConch.Abp.Captcha.IdentityServer.csproj", "{690203F4-3CD5-4569-88D9-EE831EEA5F5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Host.Shared", "host\Abp.Captcha.Host.Shared\Abp.Captcha.Host.Shared.csproj", "{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Host.Shared", "host\Abp.Captcha.Host.Shared\MagicalConch.Abp.Captcha.Host.Shared.csproj", "{F6AC8D4A-EDD7-4514-8E8A-5BCB019864DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Web.Unified", "host\Abp.Captcha.Web.Unified\Abp.Captcha.Web.Unified.csproj", "{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Web.Unified", "host\Abp.Captcha.Web.Unified\MagicalConch.Abp.Captcha.Web.Unified.csproj", "{3D872C41-E226-45C8-89C1-9D3DBD7C73F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Abp.Captcha.Blazor", "src\Abp.Captcha.Blazor\Abp.Captcha.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagicalConch.Abp.Captcha.Blazor", "src\Abp.Captcha.Blazor\MagicalConch.Abp.Captcha.Blazor.csproj", "{827FCC18-A22B-4175-82CD-1233F6DEE8FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

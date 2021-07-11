@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 
-namespace Abp.Captcha.Pages
+namespace MaigcalConch.Abp.Captcha.Pages
 {
     public class IndexModel : CaptchaPageModel
     {

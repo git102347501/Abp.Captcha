@@ -2,13 +2,13 @@
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
-namespace Abp.Captcha.EntityFrameworkCore
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
     [DependsOn(
-        typeof(CaptchaDomainModule),
+        typeof(MagicalConchCaptchaDomainModule),
         typeof(AbpEntityFrameworkCoreModule)
     )]
-    public class CaptchaEntityFrameworkCoreModule : AbpModule
+    public class MagicalConchCaptchaEntityFrameworkCoreModule : AbpModule
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {

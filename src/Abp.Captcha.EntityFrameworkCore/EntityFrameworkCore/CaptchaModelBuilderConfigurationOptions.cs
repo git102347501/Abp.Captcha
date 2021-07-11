@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using Volo.Abp.EntityFrameworkCore.Modeling;
 
-namespace Abp.Captcha.EntityFrameworkCore
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
     public class CaptchaModelBuilderConfigurationOptions : AbpModelBuilderConfigurationOptions
     {

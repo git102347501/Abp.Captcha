@@ -11,7 +11,7 @@ import { CaptchaPictureConfig } from './captcha-picture-config';
 })
 export class CaptchaPictureComponent implements OnInit {
 
-  private url = 'http://localhost:44371/';
+  private url = 'https://localhost:44335/';
   public codeValue = '';
   public config: CaptchaPictureConfig = new CaptchaPictureConfig('','');
   

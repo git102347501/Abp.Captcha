@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace Abp.Captcha.MongoDB
+namespace MaigcalConch.Abp.Captcha.MongoDB
 {
     [CollectionDefinition(Name)]
     public class MongoTestCollection : ICollectionFixture<MongoDbFixture>

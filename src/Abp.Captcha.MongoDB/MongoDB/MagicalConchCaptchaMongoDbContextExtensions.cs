@@ -2,9 +2,9 @@
 using Volo.Abp;
 using Volo.Abp.MongoDB;
 
-namespace Abp.Captcha.MongoDB
+namespace MaigcalConch.Abp.Captcha.MongoDB
 {
-    public static class CaptchaMongoDbContextExtensions
+    public static class MagicalConchCaptchaMongoDbContextExtensions
     {
         public static void ConfigureCaptcha(
             this IMongoModelBuilder builder,
@@ -12,7 +12,7 @@ namespace Abp.Captcha.MongoDB
         {
             Check.NotNull(builder, nameof(builder));
 
-            var options = new CaptchaMongoModelBuilderConfigurationOptions(
+            var options = new MagicalConchCaptchaMongoModelBuilderConfigurationOptions(
                 CaptchaDbProperties.DbTablePrefix
             );
 

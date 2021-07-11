@@ -4,7 +4,7 @@ using Volo.Abp.DependencyInjection;
 using Volo.Abp.Guids;
 using Volo.Abp.MultiTenancy;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public class CaptchaDataSeedContributor : IDataSeedContributor, ITransientDependency
     {

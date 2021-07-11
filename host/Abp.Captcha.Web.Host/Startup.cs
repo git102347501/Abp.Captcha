@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public class Startup
     {

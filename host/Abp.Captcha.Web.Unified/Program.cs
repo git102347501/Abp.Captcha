@@ -5,7 +5,7 @@ using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Events;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public class Program
     {

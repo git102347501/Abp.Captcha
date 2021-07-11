@@ -4,11 +4,11 @@ using Localization.Resources.AbpUi;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
-using Abp.Captcha.Localization;
+using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.Users;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     public class CaptchaWebHostMenuContributor : IMenuContributor
     {

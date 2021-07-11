@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Volo.Abp;
 using Volo.Abp.DependencyInjection;
 
-namespace Abp.Captcha.Slider
+namespace MaigcalConch.Abp.Captcha.Slider
 {
     /// <summary>
     /// 滑条验证提供实现

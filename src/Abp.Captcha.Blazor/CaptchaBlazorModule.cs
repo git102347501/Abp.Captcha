@@ -1,14 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Abp.Captcha.Blazor.Menus;
+using MaigcalConch.Abp.Captcha.Blazor.Menus;
 using Volo.Abp.AspNetCore.Components.WebAssembly.Theming.Routing;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
 
-namespace Abp.Captcha.Blazor
+namespace MaigcalConch.Abp.Captcha.Blazor
 {
     [DependsOn(
-        typeof(CaptchaHttpApiClientModule),
+        typeof(MagicalConchCaptchaHttpApiClientModule),
         typeof(AbpAutoMapperModule)
         )]
     public class CaptchaBlazorModule : AbpModule

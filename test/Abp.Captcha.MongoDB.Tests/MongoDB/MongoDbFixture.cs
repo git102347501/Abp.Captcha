@@ -1,7 +1,7 @@
 using System;
 using Mongo2Go;
 
-namespace Abp.Captcha.MongoDB
+namespace MaigcalConch.Abp.Captcha.MongoDB
 {
     public class MongoDbFixture : IDisposable
     {

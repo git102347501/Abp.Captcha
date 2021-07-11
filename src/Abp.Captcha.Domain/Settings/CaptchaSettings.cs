@@ -1,4 +1,4 @@
-﻿namespace Abp.Captcha.Settings
+﻿namespace MaigcalConch.Abp.Captcha.Settings
 {
     public static class CaptchaSettings
     {

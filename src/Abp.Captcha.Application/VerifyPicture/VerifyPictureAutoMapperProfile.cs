@@ -1,10 +1,10 @@
-﻿using Abp.Captcha.VerifyPicture.Dtos;
+﻿using MaigcalConch.Abp.Captcha.VerifyPicture.Dtos;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abp.Captcha.VerifyPicture
+namespace MaigcalConch.Abp.Captcha.VerifyPicture
 {
     public class VerifyPictureAutoMapperProfile : Profile
     {

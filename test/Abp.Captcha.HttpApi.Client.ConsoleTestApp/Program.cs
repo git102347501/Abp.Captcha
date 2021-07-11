@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace Abp.Captcha.HttpApi.Client.ConsoleTestApp
+namespace MaigcalConch.Abp.Captcha.HttpApi.Client.ConsoleTestApp
 {
     class Program
     {

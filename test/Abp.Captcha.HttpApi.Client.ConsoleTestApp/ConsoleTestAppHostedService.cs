@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp;
 
-namespace Abp.Captcha.HttpApi.Client.ConsoleTestApp
+namespace MaigcalConch.Abp.Captcha.HttpApi.Client.ConsoleTestApp
 {
     public class ConsoleTestAppHostedService : IHostedService
     {

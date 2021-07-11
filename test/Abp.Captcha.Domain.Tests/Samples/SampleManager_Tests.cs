@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Xunit;
 
-namespace Abp.Captcha.Samples
+namespace MaigcalConch.Abp.Captcha.Samples
 {
     public class SampleManager_Tests : CaptchaDomainTestBase
     {

@@ -6,13 +6,13 @@ using Volo.Abp.Data;
 using Volo.Abp.Modularity;
 using Volo.Abp.Threading;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     [DependsOn(
         typeof(AbpAutofacModule),
         typeof(AbpTestBaseModule),
         typeof(AbpAuthorizationModule),
-        typeof(CaptchaDomainModule)
+        typeof(MagicalConchCaptchaDomainModule)
         )]
     public class CaptchaTestBaseModule : AbpModule
     {

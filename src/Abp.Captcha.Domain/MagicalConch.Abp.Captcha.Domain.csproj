@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>MagicalConch.Abp.Captcha</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Description>适用于Abp vNext模块引用，用于提供验证用户身份功能的领域层</Description>
+    <RepositoryUrl>https://github.com/git102347501/Abp.Captcha/tree/main/src/Abp.Captcha.Domain</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/git102347501/Abp.Captcha</PackageProjectUrl>
+    <Copyright>https://github.com/git102347501/Abp.Captcha/blob/main/LICENSE</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageId>MagicalConch.Abp.Captcha.Domain</PackageId>
+    <Authors>MagicalConch</Authors>
+    <Product>Abp.Captcha</Product>
+    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIconUrl />
+    <Version>0.3.0.1</Version>
+    <AssemblyVersion>0.1.0.1</AssemblyVersion>
+    <FileVersion>0.1.0.1</FileVersion>
+    <RepositoryType>github</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.0" />
+    <PackageReference Include="Volo.Abp.Caching" Version="4.0.2" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="4.0.1" />
+    <ProjectReference Include="..\Abp.Captcha.Domain.Shared\MagicalConch.Abp.Captcha.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\z1023\Pictures\Saved Pictures\微信图片_20210703133409.jpg">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

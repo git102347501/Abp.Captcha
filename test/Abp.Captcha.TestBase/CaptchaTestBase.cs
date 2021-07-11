@@ -6,7 +6,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Uow;
 using Volo.Abp.Testing;
 
-namespace Abp.Captcha
+namespace MaigcalConch.Abp.Captcha
 {
     /* All test classes are derived from this class, directly or indirectly. */
     public abstract class CaptchaTestBase<TStartupModule> : AbpIntegratedTest<TStartupModule> 

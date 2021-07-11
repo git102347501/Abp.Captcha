@@ -1,4 +1,4 @@
-﻿namespace Abp.Captcha.Blazor.Menus
+﻿namespace MaigcalConch.Abp.Captcha.Blazor.Menus
 {
     public class CaptchaMenus
     {

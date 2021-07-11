@@ -1,34 +1,34 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.DependencyInjection;
-using Abp.Captcha.Localization;
-using Abp.Captcha.Web.Menus;
+using MaigcalConch.Abp.Captcha.Localization;
+using MaigcalConch.Abp.Captcha.Web.Menus;
 using Volo.Abp.AspNetCore.Mvc.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.VirtualFileSystem;
-using Abp.Captcha.Permissions;
+using MaigcalConch.Abp.Captcha.Permissions;
 
-namespace Abp.Captcha.Web
+namespace MaigcalConch.Abp.Captcha.Web
 {
     [DependsOn(
-        typeof(CaptchaHttpApiModule),
+        typeof(MagicalConchCaptchaHttpApiModule),
         typeof(AbpAspNetCoreMvcUiThemeSharedModule),
         typeof(AbpAutoMapperModule)
         )]
-    public class CaptchaWebModule : AbpModule
+    public class MagicalConchCaptchaWebModule : AbpModule
     {
         public override void PreConfigureServices(ServiceConfigurationContext context)
         {
             context.Services.PreConfigure<AbpMvcDataAnnotationsLocalizationOptions>(options =>
             {
-                options.AddAssemblyResource(typeof(CaptchaResource), typeof(CaptchaWebModule).Assembly);
+                options.AddAssemblyResource(typeof(CaptchaResource), typeof(MagicalConchCaptchaWebModule).Assembly);
             });
 
             PreConfigure<IMvcBuilder>(mvcBuilder =>
             {
-                mvcBuilder.AddApplicationPartIfNotExists(typeof(CaptchaWebModule).Assembly);
+                mvcBuilder.AddApplicationPartIfNotExists(typeof(MagicalConchCaptchaWebModule).Assembly);
             });
         }
 
@@ -41,13 +41,13 @@ namespace Abp.Captcha.Web
 
             Configure<AbpVirtualFileSystemOptions>(options =>
             {
-                options.FileSets.AddEmbedded<CaptchaWebModule>();
+                options.FileSets.AddEmbedded<MagicalConchCaptchaWebModule>();
             });
 
-            context.Services.AddAutoMapperObjectMapper<CaptchaWebModule>();
+            context.Services.AddAutoMapperObjectMapper<MagicalConchCaptchaWebModule>();
             Configure<AbpAutoMapperOptions>(options =>
             {
-                options.AddMaps<CaptchaWebModule>(validate: true);
+                options.AddMaps<MagicalConchCaptchaWebModule>(validate: true);
             });
 
             Configure<RazorPagesOptions>(options =>

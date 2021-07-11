@@ -6,11 +6,11 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Sqlite;
 using Volo.Abp.Modularity;
 
-namespace Abp.Captcha.EntityFrameworkCore
+namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
     [DependsOn(
         typeof(CaptchaTestBaseModule),
-        typeof(CaptchaEntityFrameworkCoreModule),
+        typeof(MagicalConchCaptchaEntityFrameworkCoreModule),
         typeof(AbpEntityFrameworkCoreSqliteModule)
         )]
     public class CaptchaEntityFrameworkCoreTestModule : AbpModule

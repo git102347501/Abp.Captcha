@@ -8,7 +8,7 @@ using Volo.Abp;
 using Volo.Abp.Caching;
 using Volo.Abp.Domain.Services;
 
-namespace Abp.Captcha.Slider
+namespace MaigcalConch.Abp.Captcha.Slider
 {
     /// <summary>
     /// 滑条领域服务实现

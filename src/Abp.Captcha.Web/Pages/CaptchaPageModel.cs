@@ -1,7 +1,7 @@
-﻿using Abp.Captcha.Localization;
+﻿using MaigcalConch.Abp.Captcha.Localization;
 using Volo.Abp.AspNetCore.Mvc.UI.RazorPages;
 
-namespace Abp.Captcha.Web.Pages
+namespace MaigcalConch.Abp.Captcha.Web.Pages
 {
     /* Inherit your PageModel classes from this class.
      */
@@ -10,7 +10,7 @@ namespace Abp.Captcha.Web.Pages
         protected CaptchaPageModel()
         {
             LocalizationResourceType = typeof(CaptchaResource);
-            ObjectMapperContext = typeof(CaptchaWebModule);
+            ObjectMapperContext = typeof(MagicalConchCaptchaWebModule);
         }
     }
 }

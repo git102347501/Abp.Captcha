@@ -1,11 +1,11 @@
 ﻿using System.Threading.Tasks;
-using Abp.Captcha.Slider;
-using Abp.Captcha.VerifyPicture;
+using MaigcalConch.Abp.Captcha.Slider;
+using MaigcalConch.Abp.Captcha.VerifyPicture;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Volo.Abp;
 
-namespace Abp.Captcha.Samples
+namespace MaigcalConch.Abp.Captcha.Samples
 {
     [RemoteService]
     [Route("api/Captcha/sample")]

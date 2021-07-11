@@ -1,4 +1,4 @@
-﻿namespace Abp.Captcha.Web.Menus
+﻿namespace MaigcalConch.Abp.Captcha.Web.Menus
 {
     public class CaptchaMenus
     {

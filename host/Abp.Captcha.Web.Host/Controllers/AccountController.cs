@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.AspNetCore.Mvc.Authentication;
 
-namespace Abp.Captcha.Controllers
+namespace MaigcalConch.Abp.Captcha.Controllers
 {
     public class AccountController : ChallengeAccountController
     {

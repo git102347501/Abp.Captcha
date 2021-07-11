@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Reflection;
 
-namespace Abp.Captcha.Permissions
+namespace MaigcalConch.Abp.Captcha.Permissions
 {
     public class CaptchaPermissions
     {

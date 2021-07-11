@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Abp.Captcha.Migrations
+namespace MaigcalConch.Abp.Captcha.Migrations
 {
     public partial class Initial : Migration
     {

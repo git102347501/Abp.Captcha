@@ -1,10 +1,10 @@
-﻿using Abp.Captcha.VerifyPicture;
+﻿using MaigcalConch.Abp.Captcha.VerifyPicture;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Abp.Captcha.Slider
+namespace MaigcalConch.Abp.Captcha.Slider
 {
     public interface ISliderVerificationProvider
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Volo.Abp.Domain.Entities.Auditing;
 
-namespace Abp.Captcha.UserAction
+namespace MaigcalConch.Abp.Captcha.UserAction
 {
     /// <summary>
     /// 用户行为聚合
