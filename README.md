@@ -21,6 +21,7 @@ Install the ABP CLI:
 > dotnet add package MagicalConch.Abp.Captcha.HttpApi 
 > dotnet add package MagicalConch.Abp.Captcha.Web
 ````
+Using module and configure:
 
 ````bash
 
