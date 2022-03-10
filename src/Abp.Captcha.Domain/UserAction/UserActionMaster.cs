@@ -10,6 +10,14 @@ namespace MaigcalConch.Abp.Captcha.UserAction
     /// </summary>
     public class UserActionMaster : CreationAuditedAggregateRoot<Guid>
     {
+        /// <summary>
+        /// IP地址
+        /// </summary>
         public string Ip { get; set; }
+
+        /// <summary>
+        /// 设备
+        /// </summary>
+        public string Device { get; set; }
     }
 }

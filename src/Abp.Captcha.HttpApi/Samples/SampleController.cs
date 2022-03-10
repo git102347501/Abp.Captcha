@@ -7,6 +7,9 @@ using Volo.Abp;
 
 namespace MaigcalConch.Abp.Captcha.Samples
 {
+    /// <summary>
+    /// test
+    /// </summary>
     [RemoteService]
     [Route("api/Captcha/sample")]
     public class SampleController : CaptchaController

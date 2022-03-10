@@ -32,11 +32,4 @@
     <Folder Include="Slider\Dtos\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="C:\Users\z1023\Pictures\Saved Pictures\微信图片_20210703133409.jpg">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
 </Project>
