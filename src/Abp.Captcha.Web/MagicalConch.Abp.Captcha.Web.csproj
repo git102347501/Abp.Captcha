@@ -19,7 +19,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/git102347501/Abp.Captcha</PackageProjectUrl>
     <RepositoryUrl>https://github.com/git102347501/Abp.Captcha</RepositoryUrl>
-    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIcon></PackageIcon>
     <PackageIconUrl />
     <RepositoryType>github</RepositoryType>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>

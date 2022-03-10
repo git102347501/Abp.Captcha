@@ -12,7 +12,7 @@
     <Description>适用于Abp vNext模块引用，用于提供验证用户身份功能的应用服务实现层</Description>
     <Copyright>https://github.com/git102347501/Abp.Captcha/blob/main/LICENSE</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIcon></PackageIcon>
     <PackageIconUrl />
     <PackageProjectUrl>https://github.com/git102347501/Abp.Captcha</PackageProjectUrl>
     <RepositoryUrl>https://github.com/git102347501/Abp.Captcha</RepositoryUrl>

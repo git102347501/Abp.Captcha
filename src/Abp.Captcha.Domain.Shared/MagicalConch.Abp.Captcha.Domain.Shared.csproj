@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/git102347501/Abp.Captcha</RepositoryUrl>
     <PackageProjectUrl>https://github.com/git102347501/Abp.Captcha</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIcon></PackageIcon>
     <PackageIconUrl />
     <Version>0.3.0.1</Version>
     <Authors>MagicalConch</Authors>

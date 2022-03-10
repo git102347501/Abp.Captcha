@@ -15,7 +15,7 @@
     <PackageId>MagicalConch.Abp.Captcha.Domain</PackageId>
     <Authors>MagicalConch</Authors>
     <Product>Abp.Captcha</Product>
-    <PackageIcon>微信图片_20210703133409.jpg</PackageIcon>
+    <PackageIcon></PackageIcon>
     <PackageIconUrl />
     <Version>0.3.0.1</Version>
     <AssemblyVersion>0.1.0.1</AssemblyVersion>
