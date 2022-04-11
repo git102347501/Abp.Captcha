@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace MagicalConch.Abp.Captcha.UserAction
 {
     /// <summary>
-    /// 用户行为领域服务
+    /// user action domain service
     /// </summary>
     public class UserActionManager : IUserActionManager
     {
@@ -19,13 +19,18 @@ namespace MagicalConch.Abp.Captcha.UserAction
             _ipAppraiseProvider = ipAppraiseProvider;
         }
 
+        /// <summary>
+        /// get user action appraise
+        /// </summary>
+        /// <returns></returns>
         public async Task<UserActionAppraise> GetAppraise()
         {
             var deviceGrade = await _deviceAppraiseProvider.GetGrade();
             var ipGrade = await _ipAppraiseProvider.GetGrade();
 
             return new UserActionAppraise(){ 
-            
+                DeviceGrade = deviceGrade,
+                IPGrade = ipGrade
             };
         }
     }

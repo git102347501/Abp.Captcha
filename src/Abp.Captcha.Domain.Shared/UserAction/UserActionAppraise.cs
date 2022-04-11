@@ -9,6 +9,8 @@ namespace MagicalConch.Abp.Captcha.UserAction
     /// </summary>
     public class UserActionAppraise
     {
+        public int IPGrade { get; set; }
 
+        public int DeviceGrade { get; set; }
     }
 }
