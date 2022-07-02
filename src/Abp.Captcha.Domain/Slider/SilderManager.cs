@@ -84,9 +84,13 @@ namespace MaigcalConch.Abp.Captcha.Slider
         public virtual async Task VerificationActionAsync(SliderActionModel sliderAction)
         {
             var cacheItem = await _cache.GetAsync(sliderAction.Ip);
-            var rquestsCount = int.Parse(_configuration["Verification:Slider:RequestsCount"]);
+            
+            if (int.TryParse(_configuration["Verification:Slider:RequestsCount"], out var requestCount))
+            {
+                throw new UserFriendlyException("滑条会话配置读取失败！");
+            }
 
-            if (cacheItem != null && cacheItem.Count > rquestsCount)
+            if (cacheItem != null && cacheItem.Count > requestCount)
             {
                 throw new UserFriendlyException("请求频繁,请在60秒后重新尝试");
             }
