@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>MagicalConch.Abp.Captcha</RootNamespace>
     <Description>适用于Abp vNext模块引用，用于提供验证用户身份功能的HttpApi层</Description>
     <Version>0.3.0.2</Version>
