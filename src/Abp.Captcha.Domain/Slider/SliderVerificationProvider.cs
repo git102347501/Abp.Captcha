@@ -103,17 +103,17 @@ namespace MaigcalConch.Abp.Captcha.Slider
                 var count = results.Count / 3;
                 for (int i = 0; i < count; i++)
                 {
-                    start += results[i];
+                    start += results[i] - (i - 1 < 0 ? 0 : results[i - 1]);
                 }
 
                 for (int i = count; i < (count * 2); i++)
                 {
-                    center += results[i];
+                    center += results[i] - (i - 1 < 0 ? 0 : results[i - 1]);
                 }
 
                 for (int i = (count * 2); i < (results.Count); i++)
                 {
-                    end += results[i];
+                    end += results[i] - (i - 1 < 0 ? 0 : results[i - 1]);
                 }
                 start /= count;
                 center /= count;
@@ -122,8 +122,24 @@ namespace MaigcalConch.Abp.Captcha.Slider
 #if DEBUG
                 Console.WriteLine("滑动速度:" + start.ToString() + "-" + center.ToString() + "-" + end.ToString());
 #endif
-                if (start < center)
+                if (start < center && center < end)
                 {
+                    Console.WriteLine("特征: 慢 => 快 => 极快" );
+                    return true;
+                }
+                else if (start < center && center > end)
+                {
+                    Console.WriteLine("特征: 慢 => 快 => 慢");
+                    return true;
+                }
+                else if (start > center && center < end)
+                {
+                    Console.WriteLine("特征: 快 => 慢 => 快");
+                    return true;
+                }
+                else if (start > center && center > end)
+                {
+                    Console.WriteLine("特征: 快 => 慢 => 极慢");
                     return true;
                 }
             }
