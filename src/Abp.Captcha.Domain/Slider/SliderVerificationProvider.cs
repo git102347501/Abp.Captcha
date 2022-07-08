@@ -29,7 +29,13 @@ namespace MaigcalConch.Abp.Captcha.Slider
             _averageMin = int.Parse(averageMin);
         }
 
-        /// <summary>
+        public SliderVerificationProvider(int averageMax, int averageMin)
+        {
+            _averageMax = averageMax;
+            _averageMin = averageMin;
+        }
+
+
         /// 验证滑条是否有效
         /// </summary>
         /// <param name="data"></param>
