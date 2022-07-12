@@ -19,5 +19,10 @@ namespace MaigcalConch.Abp.Captcha.UserAction
         /// 设备
         /// </summary>
         public string Device { get; set; }
+
+        /// <summary>
+        /// 设备类型
+        /// </summary>
+        public int DeviceType { get; set; }
     }
 }
