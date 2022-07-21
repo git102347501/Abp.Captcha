@@ -1,5 +1,6 @@
 # Abp.Captcha
 
+This is an open source module based on ABP module, which provides human-machine verification and behavior safety verification. You can use this module to verify the human-machine of your application interface caller, and control the behavior risk of the user to match the appropriate verification rules, so as to ensure that the program call can be operated by yourself more safely.
 
 [![NuGet](https://img.shields.io/nuget/v/MagicalConch.Abp.Captcha.Web.svg?style=flat-square)](https://www.nuget.org/packages/MagicalConch.Abp.Captcha.Web)
 ![NuGet Download(0.3.0.1)](https://img.shields.io/nuget/dt/Volo.Abp.Core.svg?style=flat-square)
