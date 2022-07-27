@@ -5,6 +5,14 @@ This is an open source module based on ABP module, which provides human-machine 
 [![NuGet](https://img.shields.io/nuget/v/MagicalConch.Abp.Captcha.Web.svg?style=flat-square)](https://www.nuget.org/packages/MagicalConch.Abp.Captcha.Web)
 ![NuGet Download(0.3.0.1)](https://img.shields.io/nuget/dt/Volo.Abp.Core.svg?style=flat-square)
 
+### DEMO
+
+- User Interface：
+- ![User Interface](https://user-images.githubusercontent.com/37917403/112716491-b1866600-8f21-11eb-874e-fdfc6c328334.png)
+
+- API Manage：
+- ![API Manage](https://user-images.githubusercontent.com/37917403/125195593-e1673880-e288-11eb-8ff0-70f0570e29e1.png)
+
 The first stage will provide man-machine verification module, slide bar verification and puzzle verification and user behavior safety assessment module based on ABP vNext.
 
 ### Quick Start
@@ -81,15 +89,6 @@ Using module and configure:
 
 ### Environment dependent
 - Redis
-
-
-### DEMO
-
-- User Interface：
-- ![User Interface](https://user-images.githubusercontent.com/37917403/112716491-b1866600-8f21-11eb-874e-fdfc6c328334.png)
-
-- API Manage：
-- ![API Manage](https://user-images.githubusercontent.com/37917403/125195593-e1673880-e288-11eb-8ff0-70f0570e29e1.png)
 
 ### Module Configuration Description
 TODO
