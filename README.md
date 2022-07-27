@@ -75,7 +75,7 @@ Using module and configure:
 
 
 ### Using frames
-- Abp vNext：4.0
+- Abp vNext：5.3.0
 - Obj Type：Module
 
 
