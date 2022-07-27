@@ -10,9 +10,16 @@ namespace MagicalConch.Abp.Captcha.UserAction
 {
     public class UserActionAppService : CaptchaAppService, IUserActionAppService
     {
-        public Task<GetVerificationModeOutput> GetVerificationModeAsync(GetVerificationModeInput input)
+        private readonly IUserActionManager _userActionManager;
+
+        public UserActionAppService(IUserActionManager userActionManager)
         {
-            throw new NotImplementedException();
+            _userActionManager = userActionManager;
+        }
+
+        public async Task<UserActionVerificationModel> GetVerificationModeAsync(GetVerificationModeInput input)
+        {
+            return _userActionManager.GetAppraise();
         }
     }
 }
