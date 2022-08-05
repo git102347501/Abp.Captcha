@@ -23,7 +23,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// get user action appraise
         /// </summary>
         /// <returns></returns>
-        public async Task<UserActionAppraise> GetAppraise()
+        private async Task<UserActionAppraise> GetAppraise()
         {
             var deviceGrade = await _deviceAppraiseProvider.GetGrade();
             var ipGrade = await _ipAppraiseProvider.GetGrade();
@@ -32,6 +32,11 @@ namespace MagicalConch.Abp.Captcha.UserAction
                 DeviceGrade = deviceGrade,
                 IPGrade = ipGrade
             };
+        }
+
+        public async Task<UserActionVerificationModel> GetVerificationModeAsync(object input)
+        {
+            var data = this.GetAppraise(input);
         }
     }
 }
