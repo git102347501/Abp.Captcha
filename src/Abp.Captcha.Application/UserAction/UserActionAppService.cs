@@ -8,6 +8,9 @@ using Volo.Abp;
 
 namespace MagicalConch.Abp.Captcha.UserAction
 {
+    /// <summary>
+    /// 用户会话应用服务
+    /// </summary>
     public class UserActionAppService : CaptchaAppService, IUserActionAppService
     {
         private readonly IUserActionManager _userActionManager;
@@ -19,7 +22,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
 
         public async Task<UserActionVerificationModel> GetVerificationModeAsync(GetVerificationModeInput input)
         {
-            return _userActionManager.GetAppraise();
+            return await _userActionManager.GetVerificationModeAsync(input);
         }
     }
 }
