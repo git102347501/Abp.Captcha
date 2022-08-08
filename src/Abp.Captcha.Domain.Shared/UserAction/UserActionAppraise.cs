@@ -12,5 +12,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
         public int IPGrade { get; set; }
 
         public int DeviceGrade { get; set; }
+
+        public int AverageGrade { get { return (this.IPGrade + this.DeviceGrade) / 2; } }
     }
 }

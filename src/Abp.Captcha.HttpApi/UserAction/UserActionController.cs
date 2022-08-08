@@ -1,5 +1,6 @@
 ﻿using MagicalConch.Abp.Captcha.UserAction.Dtos;
 using MaigcalConch.Abp.Captcha;
+using MaigcalConch.Abp.Captcha.Slider;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -22,11 +23,11 @@ namespace MagicalConch.Abp.Captcha.UserAction
 
         public async Task<UserActionVerificationModel> GetVerificationModeAsync()
         {
-            var ip = httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString();
-            return await _userActionAppService.GetVerificationModeAsync(new GetVerificationModeInput()
-            {
-                Ip = ip
-            });
+            var actionData = new ValidationModel<string>(httpContextAccessor.HttpContext.Request.Path.ToString(), 
+                new SliderActionModel(httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString(),
+                httpContextAccessor.HttpContext.Request.Headers["User-Agent"].ToString()));
+
+            return await _userActionAppService.GetVerificationModeAsync(actionData);
         }
     }
 }

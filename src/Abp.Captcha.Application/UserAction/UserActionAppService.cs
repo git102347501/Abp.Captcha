@@ -1,5 +1,6 @@
 ﻿using MagicalConch.Abp.Captcha.UserAction.Dtos;
 using MaigcalConch.Abp.Captcha;
+using MaigcalConch.Abp.Captcha.Slider;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,9 +21,9 @@ namespace MagicalConch.Abp.Captcha.UserAction
             _userActionManager = userActionManager;
         }
 
-        public async Task<UserActionVerificationModel> GetVerificationModeAsync(GetVerificationModeInput input)
+        public async Task<UserActionVerificationModel> GetVerificationModeAsync(ValidationModel<string> input)
         {
-            return await _userActionManager.GetVerificationModeAsync(input);
+            return await _userActionManager.GetVerificationModeAsync(CurrentUser.Id.Value, input);
         }
     }
 }

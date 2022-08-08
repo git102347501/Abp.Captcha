@@ -10,6 +10,6 @@ namespace MagicalConch.Abp.Captcha.UserAction
 {
     public interface IUserActionAppService : IApplicationService
     {
-        Task<UserActionVerificationModel> GetVerificationModeAsync(GetVerificationModeInput input);
+        Task<UserActionVerificationModel> GetVerificationModeAsync(ValidationModel<string> input);
     }
 }

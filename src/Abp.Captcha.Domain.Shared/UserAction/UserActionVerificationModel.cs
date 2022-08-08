@@ -6,8 +6,8 @@ namespace MagicalConch.Abp.Captcha.UserAction
 {
     public class UserActionVerificationModel
     {
-        public int Type { get; set; }
+        public UserActionVerificationTypeEnum Type { get; set; }
 
-        public string Name { get; set; }
+        public string Data { get; set; }
     }
 }

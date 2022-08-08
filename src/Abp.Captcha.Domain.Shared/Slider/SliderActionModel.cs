@@ -11,9 +11,12 @@ namespace MaigcalConch.Abp.Captcha.Slider
     {
         public string Ip { get; set; }
 
-        public SliderActionModel(string ip)
+        public string Device { get; set; }
+
+        public SliderActionModel(string ip, string device)
         {
             this.Ip = ip;
+            Device = device;
         }
     }
 }

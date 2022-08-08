@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaigcalConch.Abp.Captcha.Slider;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,21 +13,23 @@ namespace MagicalConch.Abp.Captcha.UserAction
     {
         private readonly IDeviceAppraiseProvider _deviceAppraiseProvider;
         private readonly IIPAppraiseProvider _ipAppraiseProvider;
+        private readonly ISilderManager _silderManager;
 
-        public UserActionManager(IDeviceAppraiseProvider deviceAppraiseProvider, IIPAppraiseProvider ipAppraiseProvider)
+        public UserActionManager(IDeviceAppraiseProvider deviceAppraiseProvider, IIPAppraiseProvider ipAppraiseProvider, ISilderManager silderManager)
         {
             _deviceAppraiseProvider = deviceAppraiseProvider;
             _ipAppraiseProvider = ipAppraiseProvider;
+            _silderManager = silderManager;
         }
 
         /// <summary>
         /// get user action appraise
         /// </summary>
         /// <returns></returns>
-        private async Task<UserActionAppraise> GetAppraise()
+        private async Task<UserActionAppraise> GetAppraise(Guid userId, string ip, string device)
         {
-            var deviceGrade = await _deviceAppraiseProvider.GetGrade();
-            var ipGrade = await _ipAppraiseProvider.GetGrade();
+            var deviceGrade = await _deviceAppraiseProvider.GetGrade(userId, device);
+            var ipGrade = await _ipAppraiseProvider.GetGrade(userId, ip);
 
             return new UserActionAppraise(){ 
                 DeviceGrade = deviceGrade,
@@ -34,9 +37,45 @@ namespace MagicalConch.Abp.Captcha.UserAction
             };
         }
 
-        public async Task<UserActionVerificationModel> GetVerificationModeAsync(object input)
+        public async Task<UserActionVerificationModel> GetVerificationModeAsync(Guid userId, ValidationModel<string> input)
         {
-            var data = this.GetAppraise(input);
+            var data = await this.GetAppraise(userId, input.ActionData.Ip, input.ActionData.Device);
+            if (data.AverageGrade <= 60)
+            {
+                // 严格策略-拼图
+                return new UserActionVerificationModel()
+                {
+                    Type = UserActionVerificationTypeEnum.VerifyPicture,
+                    Data = ""
+                };
+            } 
+            else if (data.AverageGrade >= 60 && data.AverageGrade <= 80)
+            {
+                // 正常策略-图形验证码
+                return new UserActionVerificationModel()
+                {
+                    Type = UserActionVerificationTypeEnum.Jigsaw,
+                    Data = ""
+                };
+            }
+            else if (data.AverageGrade >= 80 && data.AverageGrade <= 90)
+            {
+                // 宽松策略-滑条
+                return new UserActionVerificationModel()
+                {
+                    Type = UserActionVerificationTypeEnum.Slider,
+                    Data = await _silderManager.GetVerificationTokenAsync(input)
+                };
+            } 
+            else
+            {
+                // 免认证
+                return new UserActionVerificationModel()
+                {
+                    Type = UserActionVerificationTypeEnum.UnAuth,
+                    Data = "Security"
+                };
+            }
         }
     }
 }

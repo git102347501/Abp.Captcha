@@ -22,7 +22,8 @@ namespace MaigcalConch.Abp.Captcha.Slider
             var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
             var data = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "Data");
 
-            var actionData = new SliderActionModel(context.HttpContext.Connection.RemoteIpAddress.ToString());
+            var actionData = new SliderActionModel(context.HttpContext.Connection.RemoteIpAddress.ToString(),
+                context.HttpContext.Request.Headers["User-Agent"].ToString());
             if (data.Key.IsNullOrWhiteSpace())
             {
                 var token = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "Token");
