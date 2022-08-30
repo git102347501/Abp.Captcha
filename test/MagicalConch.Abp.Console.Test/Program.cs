@@ -15,6 +15,6 @@ while (true)
     Console.WriteLine("请输入运动Y轴坐标数组(1,2,3...)：");
     var data = Console.ReadLine();
     var result = await provider.VerificationAsync(new ValidationModel<int[]>(data.Split(",").Select(c=> int.Parse(c)).ToArray(),
-    new SliderActionModel("127.0.0.1")));
+    new SliderActionModel("127.0.0.1", "IPhone")));
     Console.WriteLine(result);
 }

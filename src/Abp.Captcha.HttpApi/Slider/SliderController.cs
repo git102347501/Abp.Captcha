@@ -27,7 +27,8 @@ namespace MaigcalConch.Abp.Captcha.Slider
         /// <returns></returns>
         public async Task<string> GetVerificationTokenAsync(string input)
         {
-            var actionData = new SliderActionModel(HttpContext.Connection.RemoteIpAddress.ToString());
+            var actionData = new SliderActionModel(HttpContext.Connection.RemoteIpAddress.ToString(),
+                HttpContext.Connection.LocalIpAddress.ToString());
             return await _sliderAppService.GetVerificationTokenAsync(new ValidationModel<string>(input, actionData));
         }
     }

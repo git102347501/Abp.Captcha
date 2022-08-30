@@ -9,6 +9,8 @@ namespace MagicalConch.Abp.Captcha.UserAction
 {
     public interface IUserActionRepository : IRepository<UserActionMaster>
     {
-        public Task<int> GetListAsync(Guid? userId, string deviceName);
+        public Task<int> GetForDeviceListAsync(Guid? userId, string deviceName);
+
+        public Task<int> GetForIpListAsync(Guid? userId, string ip);
     }
 }

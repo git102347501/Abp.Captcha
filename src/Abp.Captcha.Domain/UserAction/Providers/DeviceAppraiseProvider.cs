@@ -17,7 +17,7 @@ namespace MagicalConch.Abp.Captcha.UserAction.Providers
 
         public async Task<int> GetGrade(Guid userId, string deviceName)
         {
-            var count = await _userActionRepository.GetListAsync(userId, deviceName);
+            var count = await _userActionRepository.GetForDeviceListAsync(userId, deviceName);
             if (count < 1)
             {
                 return basicGrade;
