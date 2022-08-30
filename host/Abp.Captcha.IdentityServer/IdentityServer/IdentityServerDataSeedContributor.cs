@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer4.Models;
 using Microsoft.Extensions.Configuration;
@@ -111,20 +112,20 @@ namespace MaigcalConch.Abp.Captcha.IdentityServer
 
         private async Task<ApiScope> CreateApiScopeAsync(string name)
         {
-            var apiScope = await _apiScopeRepository.GetByNameAsync(name);
+            var apiScope = await _apiScopeRepository.GetListByNameAsync(new string[] { name });
             if (apiScope == null)
             {
-                apiScope = await _apiScopeRepository.InsertAsync(
+                apiScope.Add(await _apiScopeRepository.InsertAsync(
                     new ApiScope(
                         _guidGenerator.Create(),
                         name,
                         name + " API"
                     ),
                     autoSave: true
-                );
+                ));
             }
 
-            return apiScope;
+            return apiScope.FirstOrDefault();
         }
 
         private async Task CreateClientsAsync()
