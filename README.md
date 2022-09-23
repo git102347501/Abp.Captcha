@@ -81,6 +81,33 @@ Using module and configure:
     ...
 ````
 
+Using Authentication in API Controllers
+
+````
+ /// <summary>
+    /// test
+    /// </summary>
+    [RemoteService]
+    [Route("api/Captcha/sample")]
+    public class SampleController : CaptchaController
+    {
+        [HttpGet]
+        [Route("test")]
+        [Captcha]
+        public bool GetTest()
+        {
+            return true;
+        }
+
+        [HttpGet]
+        [Route("slidertest")]
+        [Slider]
+        public bool GetTest1()
+        {
+            return true;
+        }
+    }
+````
 
 ### Using frames
 - Abp vNext：5.3.0
@@ -95,3 +122,5 @@ TODO
 
 ### Operation Instructions
 TODO
+### Online Demo
+[MagicalConch](https://www.magicalconch.com)
