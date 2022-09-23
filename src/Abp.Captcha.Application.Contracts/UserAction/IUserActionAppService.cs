@@ -11,5 +11,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
     public interface IUserActionAppService : IApplicationService
     {
         Task<UserActionVerificationModel> GetVerificationModeAsync(ValidationModel<string> input);
+
+        Task AddAsync(string ipv4, string ipv6, string device);
     }
 }

@@ -48,23 +48,18 @@ namespace MaigcalConch.Abp.Captcha.UserAction
         /// <summary>
         /// 设备
         /// </summary>
-        public string Device { get; set; }
+        public string DeviceName { get; set; }
 
         /// <summary>
         /// 设备类型
         /// </summary>
         public int DeviceType { get; set; }
 
-        public UserActionMaster(string ipv4, string ipv6, string country, string province, string city, string area, string device, int deviceType, Guid? userId = null)
+        public UserActionMaster(string ipv4, string ipv6, string deviceName, Guid? userId = null)
         {
             Ipv4 = ipv4;
             Ipv6 = ipv6;
-            Country = country;
-            Province = province;
-            City = city;
-            Area = area;
-            Device = device;
-            DeviceType = deviceType;
+            DeviceName = deviceName;
             UserId = userId;
         }
     }

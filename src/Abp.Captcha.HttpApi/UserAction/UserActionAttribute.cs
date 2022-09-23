@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp;
 using MaigcalConch.Abp.Captcha.VerifyPicture;
+using Microsoft.AspNetCore.Http;
 
 namespace MagicalConch.Abp.Captcha.UserAction
 {
@@ -79,6 +80,10 @@ namespace MagicalConch.Abp.Captcha.UserAction
                 default:
                     throw new UserFriendlyException("The verification data is wrong!");
             }
+            var _userActionAppService = context.HttpContext.RequestServices.GetService(typeof(IUserActionAppService)) as IUserActionAppService;
+            // add action data
+            await _userActionAppService.AddAsync(context.HttpContext.Connection.RemoteIpAddress.ToString(), "",
+                context.HttpContext.Request.Headers["User-Agent"].ToString());
         }
     }
 }
