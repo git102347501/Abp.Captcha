@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Http;
 namespace MagicalConch.Abp.Captcha.UserAction
 {
     /// <summary>
-    /// 滑条验证特性
+    /// 会话安全审计特性
     /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
     public class UserActionAttribute : Attribute, IAsyncActionFilter, ITransientDependency

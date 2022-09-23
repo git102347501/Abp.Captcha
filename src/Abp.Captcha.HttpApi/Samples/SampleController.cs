@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using MagicalConch.Abp.Captcha.UserAction;
 using MaigcalConch.Abp.Captcha.Slider;
 using MaigcalConch.Abp.Captcha.VerifyPicture;
 using Microsoft.AspNetCore.Authorization;
@@ -26,6 +27,14 @@ namespace MaigcalConch.Abp.Captcha.Samples
         [Route("slidertest")]
         [Slider]
         public bool GetTest1()
+        {
+            return true;
+        }
+
+        [HttpGet]
+        [Route("useractiontest")]
+        [UserAction]
+        public bool GetTest2()
         {
             return true;
         }
