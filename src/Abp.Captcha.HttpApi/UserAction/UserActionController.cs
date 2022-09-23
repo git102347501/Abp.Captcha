@@ -30,7 +30,8 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// <returns></returns>
         public async Task<UserActionVerificationModel> GetVerificationModeAsync()
         {
-            var actionData = new ValidationModel<string>(httpContextAccessor.HttpContext.Request.Path.ToString(), 
+            var actionData = new ValidationModel<string>(
+                httpContextAccessor.HttpContext.Request.Path.ToString(), 
                 new SliderActionModel(httpContextAccessor.HttpContext.Connection.RemoteIpAddress?.ToString(),
                 httpContextAccessor.HttpContext.Request.Headers["User-Agent"].ToString()));
 

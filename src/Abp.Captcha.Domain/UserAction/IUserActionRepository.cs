@@ -11,6 +11,6 @@ namespace MagicalConch.Abp.Captcha.UserAction
     {
         public Task<int> GetForDeviceListAsync(string deviceName, Guid? userId = null);
 
-        public Task<int> GetForIpListAsync(string ipv4, Guid? userId = null);
+        public Task<int> GetForIpListAsync(string ip, Guid? userId = null);
     }
 }

@@ -81,9 +81,9 @@ namespace MagicalConch.Abp.Captcha.UserAction
             }
         }
 
-        public async Task AddAsync([NotNull]UserActionMaster data)
+        public async Task AddAsync(string ip, string path, string deviceName, Guid? userId = null)
         {
-            await _userActionRepository.InsertAsync(data);
+            await _userActionRepository.InsertAsync(new UserActionMaster(ip,path, deviceName, userId));
         }
     }
 }

@@ -22,16 +22,16 @@ namespace MagicalConch.Abp.Captcha.Repository
             var dbContext = await GetDbContextAsync();
             return dbContext.Set<UserActionMaster>()
                 .WhereIf(userId.HasValue, c => c.UserId == userId)
-                .Where(c=> c.Device == deviceName)
+                .Where(c=> c.DeviceName == deviceName)
                 .Count();
         }
 
-        public async Task<int> GetForIpListAsync(string ipv4, Guid? userId = null)
+        public async Task<int> GetForIpListAsync(string ip, Guid? userId = null)
         {
             var dbContext = await GetDbContextAsync();
             return dbContext.Set<UserActionMaster>()
                .WhereIf(userId.HasValue, c => c.UserId == userId)
-               .Where(c => c.Ipv4 == ipv4)
+               .Where(c => c.Ip == ip)
                .Count();
         }
     }

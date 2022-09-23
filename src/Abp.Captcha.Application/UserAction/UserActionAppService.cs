@@ -27,9 +27,17 @@ namespace MagicalConch.Abp.Captcha.UserAction
             return await _userActionManager.GetVerificationModeAsync(CurrentUser.Id, input);
         }
 
-        public async Task AddAsync(string ipv4, string ipv6, string device, int deviceType)
+        /// <summary>
+        /// Add Action Data
+        /// </summary>
+        /// <param name="ipv4"></param>
+        /// <param name="path"></param>
+        /// <param name="device"></param>
+        /// <param name="deviceType"></param>
+        /// <returns></returns>
+        public async Task AddAsync(string ipv4, string path, string device)
         {
-            await _userActionManager.AddAsync(new UserActionMaster(ipv4, ipv6, device, CurrentUser.Id));
+            await _userActionManager.AddAsync(ipv4, path, device, CurrentUser.Id);
         }
     }
 }

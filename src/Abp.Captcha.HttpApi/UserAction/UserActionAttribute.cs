@@ -82,7 +82,9 @@ namespace MagicalConch.Abp.Captcha.UserAction
             }
             var _userActionAppService = context.HttpContext.RequestServices.GetService(typeof(IUserActionAppService)) as IUserActionAppService;
             // add action data
-            await _userActionAppService.AddAsync(context.HttpContext.Connection.RemoteIpAddress.ToString(), "",
+            await _userActionAppService.AddAsync(
+                context.HttpContext.Connection.RemoteIpAddress.ToString(),
+                context.HttpContext.Request.Path.ToString(),
                 context.HttpContext.Request.Headers["User-Agent"].ToString());
         }
     }

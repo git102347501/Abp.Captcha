@@ -16,14 +16,14 @@ namespace MaigcalConch.Abp.Captcha.UserAction
         public Guid? UserId { get; set; }
 
         /// <summary>
-        /// IPv4地址
+        /// Path
         /// </summary>
-        public string Ipv4 { get; set; }
+        public string Path { get; set; }
 
         /// <summary>
-        /// IPv6地址
+        /// IPv4地址
         /// </summary>
-        public string Ipv6 { get; set; }
+        public string Ip { get; set; }
 
         /// <summary>
         /// Country
@@ -55,10 +55,10 @@ namespace MaigcalConch.Abp.Captcha.UserAction
         /// </summary>
         public int DeviceType { get; set; }
 
-        public UserActionMaster(string ipv4, string ipv6, string deviceName, Guid? userId = null)
+        public UserActionMaster(string ip, string path, string deviceName, Guid? userId = null)
         {
-            Ipv4 = ipv4;
-            Ipv6 = ipv6;
+            Ip = ip;
+            Path = path;
             DeviceName = deviceName;
             UserId = userId;
         }

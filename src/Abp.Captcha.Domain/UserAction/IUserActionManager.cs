@@ -15,7 +15,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        Task AddAsync(UserActionMaster data);
+        Task AddAsync(string ip, string path, string deviceName, Guid? userId = null);
 
         /// <summary>
         /// 根据用户会话信息，返回人机验证方式和验证数据

@@ -1,4 +1,5 @@
 ﻿using System;
+using MagicalConch.Abp.Captcha.IP;
 using MaigcalConch.Abp.Captcha.UserAction;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
@@ -24,14 +25,19 @@ namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
             builder.Entity<UserActionMaster>(b =>
             {
                 b.ConfigureByConvention();
-                //Properties
-                b.Property(q => q.Ipv6).HasMaxLength(128);
-                b.Property(q => q.Ipv4).HasMaxLength(32);
+                b.Property(q => q.Ip).HasMaxLength(128);
+                b.Property(q => q.Path).HasMaxLength(128);
                 b.Property(q => q.Country).HasMaxLength(48);
                 b.Property(q => q.Province).HasMaxLength(48);
                 b.Property(q => q.City).HasMaxLength(48);
                 b.Property(q => q.Area).HasMaxLength(128);
-                b.Property(q => q.Device).HasMaxLength(68);
+                b.Property(q => q.DeviceName).HasMaxLength(68);
+            });
+
+            builder.Entity<IPMaster>(b =>
+            {
+                b.ConfigureByConvention();
+                b.Property(q => q.Ip).HasMaxLength(128);
             });
         }
     }
