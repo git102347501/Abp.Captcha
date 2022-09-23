@@ -17,6 +17,10 @@ namespace MagicalConch.Abp.Captcha.UserAction.Providers
 
         public async Task<int> GetGrade(Guid userId, string deviceName)
         {
+            if (string.IsNullOrWhiteSpace(deviceName))
+            {
+                return 0;
+            }
             var count = await _userActionRepository.GetForDeviceListAsync(userId, deviceName);
             if (count < 1)
             {

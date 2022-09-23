@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace MagicalConch.Abp.Captcha.UserAction
 {
+    /// <summary>
+    /// 用户会话
+    /// </summary>
     public class UserActionController : CaptchaController
     {
         private readonly IUserActionAppService _userActionAppService;
@@ -21,10 +24,14 @@ namespace MagicalConch.Abp.Captcha.UserAction
             this.httpContextAccessor = httpContextAccessor;
         }
 
+        /// <summary>
+        /// 获取当前会话验证数据
+        /// </summary>
+        /// <returns></returns>
         public async Task<UserActionVerificationModel> GetVerificationModeAsync()
         {
             var actionData = new ValidationModel<string>(httpContextAccessor.HttpContext.Request.Path.ToString(), 
-                new SliderActionModel(httpContextAccessor.HttpContext.Connection.RemoteIpAddress.ToString(),
+                new SliderActionModel(httpContextAccessor.HttpContext.Connection.RemoteIpAddress?.ToString(),
                 httpContextAccessor.HttpContext.Request.Headers["User-Agent"].ToString()));
 
             return await _userActionAppService.GetVerificationModeAsync(actionData);
