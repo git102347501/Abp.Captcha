@@ -23,7 +23,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
 
         public async Task<UserActionVerificationModel> GetVerificationModeAsync(ValidationModel<string> input)
         {
-            return await _userActionManager.GetVerificationModeAsync(CurrentUser.Id.Value, input);
+            return await _userActionManager.GetVerificationModeAsync(CurrentUser.Id, input);
         }
     }
 }

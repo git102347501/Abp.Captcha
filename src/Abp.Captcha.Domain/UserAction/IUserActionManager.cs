@@ -14,6 +14,6 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        Task<UserActionVerificationModel> GetVerificationModeAsync(Guid userId, ValidationModel<string> input);
+        Task<UserActionVerificationModel> GetVerificationModeAsync(Guid? userId, ValidationModel<string> input);
     }
 }

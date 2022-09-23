@@ -19,18 +19,18 @@ namespace MaigcalConch.Abp.Captcha.Slider
     {
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
             var data = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "Data");
 
             var actionData = new SliderActionModel(context.HttpContext.Connection.RemoteIpAddress.ToString(),
                 context.HttpContext.Request.Headers["User-Agent"].ToString());
+            var _sliderAppService = context.HttpContext.RequestServices.GetService(typeof(ISliderAppService)) as ISliderAppService;
             if (data.Key.IsNullOrWhiteSpace())
             {
                 var token = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "Token");
                 if (token.Key.IsNullOrWhiteSpace())
                 {
                     var valTokendata = new ValidationModel<string>(token.Value, actionData);
-                    if (!await _verifyPictureAppService.VerificationTokenAsync(valTokendata))
+                    if (!await _sliderAppService.VerificationTokenAsync(valTokendata))
                     {
                         throw new UserFriendlyException("The verification code is wrong!");
                     }
@@ -39,7 +39,7 @@ namespace MaigcalConch.Abp.Captcha.Slider
             }
 
             var valdata = new ValidationModel<int[]>(Array.ConvertAll(data.Value.ToString().Split(','), int.Parse), actionData);
-            if (!await _verifyPictureAppService.VerificationAsync(valdata))
+            if (!await _sliderAppService.VerificationAsync(valdata))
             {
                 throw new UserFriendlyException("The verification code is wrong!");
             }
