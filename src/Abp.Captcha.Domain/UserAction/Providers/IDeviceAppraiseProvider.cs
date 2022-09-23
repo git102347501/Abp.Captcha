@@ -14,6 +14,6 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// GetGrade
         /// </summary>
         /// <returns></returns>
-        public Task<int> GetGrade(Guid userId, string deviceName);
+        public Task<int> GetGrade(Guid? userId, string deviceName);
     }
 }

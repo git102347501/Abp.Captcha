@@ -1,4 +1,6 @@
-﻿using MaigcalConch.Abp.Captcha.Slider;
+﻿using JetBrains.Annotations;
+using MaigcalConch.Abp.Captcha.Slider;
+using MaigcalConch.Abp.Captcha.UserAction;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +16,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
         private readonly IDeviceAppraiseProvider _deviceAppraiseProvider;
         private readonly IIPAppraiseProvider _ipAppraiseProvider;
         private readonly ISilderManager _silderManager;
+        private readonly IUserActionRepository _userActionRepository;
 
         public UserActionManager(IDeviceAppraiseProvider deviceAppraiseProvider, IIPAppraiseProvider ipAppraiseProvider, ISilderManager silderManager)
         {
@@ -26,7 +29,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// get user action appraise
         /// </summary>
         /// <returns></returns>
-        private async Task<UserActionAppraise> GetAppraise(Guid userId, string ip, string device)
+        private async Task<UserActionAppraise> GetAppraise(Guid? userId, string ip, string device)
         {
             var deviceGrade = await _deviceAppraiseProvider.GetGrade(userId, device);
             var ipGrade = await _ipAppraiseProvider.GetGrade(userId, ip);
@@ -37,7 +40,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
             };
         }
 
-        public async Task<UserActionVerificationModel> GetVerificationModeAsync(Guid userId, ValidationModel<string> input)
+        public async Task<UserActionVerificationModel> GetVerificationModeAsync(Guid? userId, ValidationModel<string> input)
         {
             var data = await this.GetAppraise(userId, input.ActionData.Ip, input.ActionData.Device);
             if (data.AverageGrade <= 60)
@@ -76,6 +79,11 @@ namespace MagicalConch.Abp.Captcha.UserAction
                     Data = "Security"
                 };
             }
+        }
+
+        public async Task AddAsync([NotNull]UserActionMaster data)
+        {
+            await _userActionRepository.InsertAsync(data);
         }
     }
 }

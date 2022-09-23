@@ -1,6 +1,8 @@
 ﻿using System;
+using MaigcalConch.Abp.Captcha.UserAction;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
+using Volo.Abp.EntityFrameworkCore.Modeling;
 
 namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 {
@@ -19,25 +21,18 @@ namespace MaigcalConch.Abp.Captcha.EntityFrameworkCore
 
             optionsAction?.Invoke(options);
 
-            /* Configure all entities here. Example:
-
-            builder.Entity<Question>(b =>
+            builder.Entity<UserActionMaster>(b =>
             {
-                //Configure table & schema name
-                b.ToTable(options.TablePrefix + "Questions", options.Schema);
-            
                 b.ConfigureByConvention();
-            
                 //Properties
-                b.Property(q => q.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-                
-                //Relations
-                b.HasMany(question => question.Tags).WithOne().HasForeignKey(qt => qt.QuestionId);
-
-                //Indexes
-                b.HasIndex(q => q.CreationTime);
+                b.Property(q => q.Ipv6).HasMaxLength(128);
+                b.Property(q => q.Ipv4).HasMaxLength(32);
+                b.Property(q => q.Country).HasMaxLength(48);
+                b.Property(q => q.Province).HasMaxLength(48);
+                b.Property(q => q.City).HasMaxLength(48);
+                b.Property(q => q.Area).HasMaxLength(128);
+                b.Property(q => q.Device).HasMaxLength(68);
             });
-            */
         }
     }
 }

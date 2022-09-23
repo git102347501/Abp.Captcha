@@ -15,13 +15,13 @@ namespace MagicalConch.Abp.Captcha.UserAction.Providers
             _userActionRepository = userActionRepository;
         }
 
-        public async Task<int> GetGrade(Guid userId, string ip)
+        public async Task<int> GetGrade(Guid? userId, string ip)
         {
             if (string.IsNullOrWhiteSpace(ip))
             {
                 return 0;
             }
-            var count = await _userActionRepository.GetForIpListAsync(userId, ip);
+            var count = await _userActionRepository.GetForIpListAsync(ip, userId);
             if (count < 1)
             {
                 return basicGrade;
