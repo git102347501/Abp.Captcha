@@ -4,7 +4,7 @@ This is an open source module based on ABP module, which provides human-machine 
 
 [![NuGet](https://img.shields.io/nuget/v/MagicalConch.Abp.Captcha.Web.svg?style=flat-square)](https://www.nuget.org/packages/MagicalConch.Abp.Captcha.Web)
 ![NuGet Download(0.3.0.1)](https://img.shields.io/nuget/dt/Volo.Abp.Core.svg?style=flat-square)
-  <a href="https://www.npmjs.com/package/abp-captcha"><img src="https://img.shields.io/npm/v/vue.svg?sanitize=true" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/abp-captcha"><img src="https://img.shields.io/npm/v/vue.svg?sanitize=true"></a>
   <a href="https://www.npmjs.com/package/abp-captcha"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
 ### DEMO
 
