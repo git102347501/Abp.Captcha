@@ -110,6 +110,55 @@ Using Authentication in API Controllers
     }
 ````
 
+Angular Using:
+
+Add Npm Package:
+````
+yarn add abpcaptcha
+or
+npm i abpcaptcha
+````
+
+Import Module:
+````
+@NgModule({
+  ...
+  imports: [
+    ...
+    CaptchaModule
+  ]
+  ...
+})
+
+export class YourModule { }
+````
+
+For Dom:
+````
+<app-captcha-picture ref="captcha" url="{your captcha api basic url}"></app-captcha-picture>
+Get the properties {index, code} in the component through ref
+````
+
+For Modal:
+````
+const modal = this.modal.create({
+  nzTitle: 'Captcha',
+  nzContent: CaptchaPictureComponent,
+  nzViewContainerRef: this.viewContainerRef,
+  nzComponentParams: {
+    url: {your captcha api basic url}
+  }
+});
+
+modal.afterClose.subscribe(result => {
+  const instance = modal.getContentComponent();
+  this.httpservice.yourapi(this.yourform.value, instance.index, instance.code).subscribe((res: any) => {
+    alert('sucess');
+  }, err => {
+    alert('err');
+  });
+});
+````
 ### Using frames
 - Abp vNext：5.3.0
 - Obj Type：Module
