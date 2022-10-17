@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Volo.Abp;
 using Volo.Abp.Auditing;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Entities.Auditing;
@@ -25,6 +26,8 @@ namespace MagicalConch.Abp.Captcha.IP
 
         public IPMaster(string ip, IPTypeEnum type, IPCategoryEnum category)
         {
+            Check.NotNullOrWhiteSpace(ip, nameof(ip));
+
             Ip = ip;
             Type = type;
             Category = category;

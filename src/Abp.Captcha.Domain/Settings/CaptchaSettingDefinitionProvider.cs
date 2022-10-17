@@ -6,9 +6,10 @@ namespace MaigcalConch.Abp.Captcha.Settings
     {
         public override void Define(ISettingDefinitionContext context)
         {
-            /* Define module settings here.
-             * Use names from CaptchaSettings class.
-             */
+            context.Add(
+                new SettingDefinition(CaptchaSettings.IpTime, "10"),
+                new SettingDefinition(CaptchaSettings.IpCount, "3")
+            );
         }
     }
 }

@@ -1,7 +1,9 @@
 {
   "culture": "en",
   "texts": {
-    "ManageYourProfile":  "Manage your profile",
-    "SamplePageMessage": "A sample page for the Captcha module"
+    "ManageYourProfile": "Manage your profile",
+    "SamplePageMessage": "A sample page for the Captcha module",
+    "Ip:FrequentAccess": "Frequent visits, please try again later",
+    "Ip:WrongIpConfig": "Wrong IP audit configuration"
   }
 }

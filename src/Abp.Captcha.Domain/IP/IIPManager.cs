@@ -8,6 +8,10 @@ namespace MagicalConch.Abp.Captcha.IP
 {
     public interface IIPManager : IDomainService
     {
-        Task AddAsync(string ip, IPTypeEnum type, IPCategoryEnum category);
+        Task AddAsync(string ip);
+
+        Task AddIpConfigAsync(string ip, IPTypeEnum type, IPCategoryEnum category);
+
+        Task ValidationAsync(string ip);
     }
 }

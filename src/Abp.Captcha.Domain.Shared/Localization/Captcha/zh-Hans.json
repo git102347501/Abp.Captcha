@@ -2,6 +2,8 @@
   "culture": "zh-Hans",
   "texts": {
     "ManageYourProfile": "管理个人资料",
-    "SamplePageMessage": "Captcha模块的示例页面"
+    "SamplePageMessage": "Captcha模块的示例页面",
+    "Ip:FrequentAccess": "访问频繁，请稍后再试",
+    "Ip:WrongIpConfig": "错误的IP审计配置"
   }
 }

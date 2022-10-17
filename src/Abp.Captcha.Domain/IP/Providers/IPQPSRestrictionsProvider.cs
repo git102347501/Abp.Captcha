@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Volo.Abp.Caching;
+using Volo.Abp.DependencyInjection;
 
 namespace MagicalConch.Abp.Captcha.IP.Providers
 {
-    public class IPQPSRestrictionsProvider : IIPQPSRestrictionsProvider
+    public class IPQPSRestrictionsProvider : IIPQPSRestrictionsProvider, ITransientDependency
     {
-        private readonly IDistributedCache<IPCacheCache> _cacheCountCache;
+        private readonly IDistributedCache<IPVisitCache> _cacheCountCache;
 
         /// <summary>
         /// 验证QPS限制

@@ -38,5 +38,13 @@ namespace MaigcalConch.Abp.Captcha.Samples
         {
             return true;
         }
+
+        [HttpGet]
+        [Route("useractiontest")]
+        [UserAction]
+        public bool GetTest3()
+        {
+            return true;
+        }
     }
 }
