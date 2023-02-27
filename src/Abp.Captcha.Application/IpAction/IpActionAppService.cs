@@ -15,6 +15,11 @@ namespace MagicalConch.Abp.Captcha.IpAction
             _ipManager = ipManager;
         }
 
+        public async Task AddAsync(string ip)
+        {
+            await _ipManager.AddAsync(ip);
+        }
+
         public async Task ValidationAsync(string ip)
         {
             await _ipManager.ValidationAsync(ip);

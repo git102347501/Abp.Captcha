@@ -19,11 +19,10 @@ namespace MagicalConch.Abp.Captcha.UserAction
             var address = context.HttpContext.Connection.RemoteIpAddress.ToString();
             if (address.IsNullOrWhiteSpace())
             {
-                throw new UserFriendlyException("Action not Address!");
+                throw new UserFriendlyException("Illegal session!");
             }
             var _verifyPictureAppService = context.HttpContext.RequestServices.GetService(typeof(IIpActionAppService)) as IIpActionAppService;
             await _verifyPictureAppService.AddAsync(address);
-
         }
     }
 }

@@ -9,5 +9,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
         public UserActionVerificationTypeEnum Type { get; set; }
 
         public string Data { get; set; }
+
+        public Guid Id { get; set; }
     }
 }

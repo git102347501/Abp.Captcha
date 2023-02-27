@@ -23,5 +23,13 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// <param name="input"></param>
         /// <returns></returns>
         Task<UserActionVerificationModel> GetVerificationModeAsync(Guid? userId, ValidationModel<string> input);
+
+        /// <summary>
+        /// 验证会话有效
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        Task<bool> VerificationTokenAsync(Guid id, UserActionVerificationTypeEnum type);
     }
 }
