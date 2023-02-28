@@ -169,6 +169,11 @@ modal.afterClose.subscribe(result => {
 ### Module Configuration Description
 TODO
 
+### UML
+- User Action
+
+  ![1677551288000](https://user-images.githubusercontent.com/37917403/221737819-b801adc2-2c69-4bbc-b722-e250c6ff18c5.png)
+
 ### Operation Instructions
 TODO
 ### Online Demo
