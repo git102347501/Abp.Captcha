@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.DependencyInjection;
 
 namespace MagicalConch.Abp.Captcha.UserAction.Providers
 {
-    public class DeviceAppraiseProvider : IDeviceAppraiseProvider
+    public class DeviceAppraiseProvider : IDeviceAppraiseProvider, ITransientDependency
     {
         private readonly int basicGrade = 59;
         private readonly IUserActionRepository _userActionRepository;
@@ -17,7 +18,7 @@ namespace MagicalConch.Abp.Captcha.UserAction.Providers
 
         public async Task<int> GetGrade(Guid? userId, string deviceName)
         {
-            if (string.IsNullOrWhiteSpace(deviceName))
+            if (string.IsNullOrWhiteSpace(deviceName) || !userId.HasValue)
             {
                 return 0;
             }

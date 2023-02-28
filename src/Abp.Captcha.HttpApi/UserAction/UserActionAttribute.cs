@@ -21,23 +21,23 @@ namespace MagicalConch.Abp.Captcha.UserAction
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             var actionType = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "ActionType");
-            if (actionType.Key.IsNullOrWhiteSpace())
+            if (actionType.Key.IsNullOrWhiteSpace() || actionType.Value.ToString().IsNullOrWhiteSpace())
             {
                 throw new UserFriendlyException("The verification data is wrong!");
             }
             var actionId = context.HttpContext.Request.Headers.FirstOrDefault(c => c.Key == "ActionId");
-            if (actionId.Key.IsNullOrWhiteSpace())
+            if (actionId.Key.IsNullOrWhiteSpace() || actionId.Value.ToString().IsNullOrWhiteSpace())
             {
                 throw new UserFriendlyException("The verification data is wrong!");
             }
 
-            var type = (UserActionVerificationTypeEnum)Enum.Parse(typeof(UserActionVerificationTypeEnum), actionType.Key);
+            var type = (UserActionVerificationTypeEnum)Enum.Parse(typeof(UserActionVerificationTypeEnum), actionType.Value);
             if (!Enum.IsDefined(typeof(UserActionVerificationTypeEnum), type))
             {
                 throw new UserFriendlyException("The verification data is wrong!");
             }
 
-            await CheckActionAsync(context, new Guid(actionId.Key), type);
+            await CheckActionAsync(context, new Guid(actionId.Value), type);
 
             await CheckTokenAsync(context, type, next);
 

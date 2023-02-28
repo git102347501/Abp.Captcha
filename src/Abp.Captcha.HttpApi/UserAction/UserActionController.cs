@@ -2,6 +2,7 @@
 using MaigcalConch.Abp.Captcha;
 using MaigcalConch.Abp.Captcha.Slider;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
     /// <summary>
     /// 用户会话
     /// </summary>
+    [Route("api/user-action")]
     public class UserActionController : CaptchaController
     {
         private readonly IUserActionAppService _userActionAppService;
@@ -28,6 +30,8 @@ namespace MagicalConch.Abp.Captcha.UserAction
         /// 获取当前会话验证数据
         /// </summary>
         /// <returns></returns>
+        [Route("api/user-action/mode")]
+        [HttpGet]
         public async Task<UserActionVerificationModel> GetVerificationModeAsync()
         {
             var actionData = new ValidationModel<string>(

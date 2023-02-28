@@ -20,16 +20,16 @@ namespace MagicalConch.Abp.Captcha.UserAction
     {
         private readonly IDeviceAppraiseProvider _deviceAppraiseProvider;
         private readonly IIPAppraiseProvider _ipAppraiseProvider;
-        private readonly ISilderManager _silderManager;
         private readonly IUserActionRepository _userActionRepository;
         private readonly IDistributedCache<UserActionCache> _cache;
 
-        public UserActionManager(IDeviceAppraiseProvider deviceAppraiseProvider, IIPAppraiseProvider ipAppraiseProvider, ISilderManager silderManager, IDistributedCache<UserActionCache> cache)
+        public UserActionManager(IDeviceAppraiseProvider deviceAppraiseProvider, IIPAppraiseProvider ipAppraiseProvider,
+            IDistributedCache<UserActionCache> cache, IUserActionRepository userActionRepository)
         {
             _deviceAppraiseProvider = deviceAppraiseProvider;
             _ipAppraiseProvider = ipAppraiseProvider;
-            _silderManager = silderManager;
             _cache = cache;
+            _userActionRepository = userActionRepository;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace MagicalConch.Abp.Captcha.UserAction
             await _cache.SetAsync(result.Id.ToString(), new UserActionCache()
             {
                 Type = result.Type
-            });
+            }, new Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions() { AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(1) });
             return result;
         }
 

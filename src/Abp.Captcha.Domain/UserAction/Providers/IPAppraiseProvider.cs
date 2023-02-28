@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using Volo.Abp.DependencyInjection;
 
 namespace MagicalConch.Abp.Captcha.UserAction.Providers
 {
-    public class IPAppraiseProvider : IIPAppraiseProvider
+    /// <summary>
+    /// IP安全模型评估
+    /// </summary>
+    public class IPAppraiseProvider : IIPAppraiseProvider, ITransientDependency
     {
         private readonly int basicGrade = 59;
         private readonly IUserActionRepository _userActionRepository;
@@ -17,7 +21,7 @@ namespace MagicalConch.Abp.Captcha.UserAction.Providers
 
         public async Task<int> GetGrade(Guid? userId, string ip)
         {
-            if (string.IsNullOrWhiteSpace(ip))
+            if (string.IsNullOrWhiteSpace(ip) || !userId.HasValue)
             {
                 return 0;
             }
