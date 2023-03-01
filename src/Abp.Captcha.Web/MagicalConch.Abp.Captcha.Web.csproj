@@ -3,14 +3,14 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <IsPackable>true</IsPackable>
     <OutputType>Library</OutputType>
     <RootNamespace>MagicalConch.Abp.Captcha.Web</RootNamespace>
     <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
     <PackageId>MagicalConch.Abp.Captcha.Web</PackageId>
-    <Version>0.3.0.1</Version>
+    <Version>0.3.1.0</Version>
     <Authors>MagicalConch</Authors>
     <Company>MagicalConch</Company>
     <Product>Abp.Captcha</Product>
@@ -27,8 +27,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="5.3.4" />
-    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="5.3.4" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.2" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.8" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="7.0.3" />
   </ItemGroup>
 
   <ItemGroup>

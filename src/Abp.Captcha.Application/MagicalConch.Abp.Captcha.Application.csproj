@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageId>MagicalConch.Abp.Captcha.Application</PackageId>
-    <Version>0.3.0.1</Version>
+    <Version>0.3.1.0</Version>
     <Description>适用于Abp vNext模块引用，用于提供验证用户身份功能的应用服务实现层</Description>
     <Copyright>https://github.com/git102347501/Abp.Captcha/blob/main/LICENSE</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -23,8 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="5.3.4" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="5.3.4" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.2" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="7.0.2" />
     <ProjectReference Include="..\Abp.Captcha.Application.Contracts\MagicalConch.Abp.Captcha.Application.Contracts.csproj" />
     <ProjectReference Include="..\Abp.Captcha.Domain\MagicalConch.Abp.Captcha.Domain.csproj" />
   </ItemGroup>
