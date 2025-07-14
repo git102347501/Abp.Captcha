@@ -23,8 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.2" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="7.0.2" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="8.0.18" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="8.0.18" />
     <ProjectReference Include="..\Abp.Captcha.Application.Contracts\MagicalConch.Abp.Captcha.Application.Contracts.csproj" />
     <ProjectReference Include="..\Abp.Captcha.Domain\MagicalConch.Abp.Captcha.Domain.csproj" />
   </ItemGroup>
