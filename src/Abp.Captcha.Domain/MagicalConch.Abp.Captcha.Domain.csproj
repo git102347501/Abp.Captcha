@@ -25,8 +25,8 @@
 
   <ItemGroup>
     <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
-    <PackageReference Include="Volo.Abp.Caching" Version="7.0.2" />
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="7.0.2" />
+    <PackageReference Include="Volo.Abp.Caching" Version="8.0.18" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="8.0.18" />
     <ProjectReference Include="..\Abp.Captcha.Domain.Shared\MagicalConch.Abp.Captcha.Domain.Shared.csproj" />
   </ItemGroup>
 
