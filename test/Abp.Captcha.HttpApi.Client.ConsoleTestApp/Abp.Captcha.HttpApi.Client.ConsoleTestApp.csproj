@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="5.3.4" />
+    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="9.2.0" />
     <ProjectReference Include="..\..\src\Abp.Captcha.HttpApi.Client\MagicalConch.Abp.Captcha.HttpApi.Client.csproj" />
   </ItemGroup>
 
