@@ -4,6 +4,7 @@ using MaigcalConch.Abp.Captcha.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace MaigcalConch.Abp.Captcha.Migrations
 {
     [DbContext(typeof(CaptchaHttpApiHostMigrationsDbContext))]
-    partial class CaptchaHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250811093854_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
