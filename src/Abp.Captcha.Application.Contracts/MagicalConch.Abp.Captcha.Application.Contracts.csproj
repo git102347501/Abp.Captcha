@@ -23,8 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="8.0.18" />
-    <PackageReference Include="Volo.Abp.Authorization" Version="8.0.18" />
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="9.2.0" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="9.2.0" />
     <ProjectReference Include="..\Abp.Captcha.Domain.Shared\MagicalConch.Abp.Captcha.Domain.Shared.csproj" />
   </ItemGroup>
 
