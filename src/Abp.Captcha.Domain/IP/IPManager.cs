@@ -20,9 +20,15 @@ namespace MagicalConch.Abp.Captcha.IP
         private readonly IIPQPSRestrictionsProvider _ipQpsRestrictionsProvider;
         private readonly IDistributedCache<IPVisitCache> _ipVisitCache;
 
-        public IPManager(IIPRepository ipRepository, IDistributedCache<IPVisitCache> ipVisitCache)
+        public IPManager(
+            IIPRepository ipRepository,
+            ISettingProvider settingProvider,
+            IIPQPSRestrictionsProvider ipQpsRestrictionsProvider,
+            IDistributedCache<IPVisitCache> ipVisitCache)
         {
             _ipRepository = ipRepository;
+            _settingProvider = settingProvider;
+            _ipQpsRestrictionsProvider = ipQpsRestrictionsProvider;
             _ipVisitCache = ipVisitCache;
         }
 
